@@ -63,6 +63,46 @@ const experience = [
   },
 ];
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Marco Flores Cantillana",
+  givenName: "Marco",
+  familyName: "Flores Cantillana",
+  url: "https://marcoflores.cl",
+  sameAs: ["https://github.com/MarcoFloresCa"],
+  jobTitle: ["Desarrollador Salesforce", "Analista TI"],
+  description:
+    "Desarrollador Salesforce y Analista TI especializado en Apex, LWC, Flow, integraciones, automatización y Business Intelligence.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Mostazal",
+    addressRegion: "Región de O'Higgins",
+    addressCountry: "CL",
+  },
+  knowsAbout: [
+    "Salesforce Platform",
+    "Apex",
+    "SOQL",
+    "Lightning Web Components",
+    "Salesforce Flow",
+    "REST APIs",
+    "OAuth 2.0",
+    "Qlik Sense",
+    "Business Intelligence",
+    "Integración de sistemas",
+  ],
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Desarrollador Salesforce",
+    occupationLocation: {
+      "@type": "Country",
+      name: "Chile",
+    },
+    skills: "Salesforce, Apex, SOQL, LWC, Flow, integraciones, automatización y APIs REST",
+  },
+};
+
 function ArrowIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
 }
@@ -74,6 +114,10 @@ function ExternalIcon() {
 export default function Home() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Marco Flores, inicio">MF<span>.</span></a>
         <nav aria-label="Navegación principal">
@@ -87,10 +131,10 @@ export default function Home() {
       <section className="hero" id="inicio">
         <div className="hero-copy">
           <p className="eyebrow"><span /> Analista TI & Desarrollador Salesforce</p>
-          <h1>Conecto tecnología,<br />datos y <em>negocio.</em></h1>
+          <h1>Desarrollador Salesforce.<br />Conecto datos y <em>negocio.</em></h1>
           <p className="hero-lead">
-            Desarrollo soluciones sobre Salesforce, Qlik e integraciones que simplifican procesos,
-            ordenan información y ayudan a tomar mejores decisiones.
+            Soy desarrollador Salesforce y Analista TI en Chile. Creo soluciones con Apex, LWC, Flow,
+            Qlik e integraciones que simplifican procesos y ayudan a tomar mejores decisiones.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#proyectos">Ver proyectos <ArrowIcon /></a>
