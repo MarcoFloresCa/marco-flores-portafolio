@@ -1,51 +1,73 @@
 const projects = [
   {
     index: "01",
+    icon: "/icons/brands/salesforce.svg",
+    overlayIcon: "/icons/projects/bot-assistant.svg",
     type: "Salesforce · IA aplicada",
     title: "Asistente para entender la lógica de Salesforce",
     description:
-      "Arquitectura de un chatbot de consulta —no modificación— capaz de explicar objetos, campos, relaciones, Flows, Triggers y reglas de validación de una organización Salesforce.",
+      "Arquitectura de un chatbot de consulta (sin capacidad de modificación) capaz de explicar objetos, campos, relaciones, Flows, Triggers y reglas de validación de una organización Salesforce.",
     tags: ["Apex", "SOQL", "Metadata API", "MCP", "TypeScript"],
+    link: null,
   },
   {
     index: "02",
+    icon: "/icons/projects/drive-sync.svg",
+    overlayIcon: null,
     type: "Integración · Automatización",
     title: "Salesforce conectado con Google Drive",
     description:
       "Integración server-to-server con Service Account y JWT Bearer Flow para crear y organizar carpetas desde Salesforce, cuidando permisos, propiedad y trazabilidad documental.",
     tags: ["Apex", "JWT / RS256", "Google Drive API", "OAuth 2.0"],
+    link: null,
   },
   {
     index: "03",
+    icon: "/icons/brands/qlik.svg",
+    overlayIcon: null,
     type: "Business Intelligence",
     title: "Seguimiento comercial en Qlik Sense",
     description:
       "Modelo de control para comparar resultados reales, presupuesto y forecast por campaña, mes, ejecutivo, zona y grupo, utilizando datos contables y maestros consultados en modo de solo lectura desde SAP.",
     tags: ["Qlik Sense", "SAP · Solo lectura", "Salesforce", "ETL", "QVD", "Modelado de datos"],
+    link: null,
   },
   {
     index: "04",
+    icon: "/icons/projects/asset-trace.svg",
+    overlayIcon: null,
     type: "Salesforce · Procesos internos",
     title: "Inventario y trazabilidad de activos TI",
     description:
       "MVP sobre Salesforce para gestionar equipos y movimientos, con flujos de altas, bajas y traspasos y aprobaciones.",
     tags: ["LWC", "Apex", "Flow", "Automatización"],
+    link: null,
   },
   {
     index: "05",
-    type: "Automatización · Atención digital",
-    title: "Chatbot de asistencia por WhatsApp",
+    icon: "/icons/brands/whatsapp.svg",
+    overlayIcon: "/icons/projects/bot-assistant.svg",
+    type: "Salud · Automatización",
+    title: "Confirmación de asistencia hospitalaria por WhatsApp",
     description:
-      "Canal automatizado para atender consultas frecuentes, orientar a los usuarios y derivar solicitudes que requieren atención humana, manteniendo el contexto de cada conversación.",
-    tags: ["WhatsApp Business API", "Webhooks", "REST APIs", "Automatización"],
+      "Sistema para cargar agendas desde Excel y enviar confirmaciones de asistencia a pacientes mediante whatsapp-web.js, con validación de registros, conexión por código QR y persistencia en MySQL.",
+    tags: ["Node.js", "whatsapp-web.js", "MySQL", "JavaScript", "PHP"],
+    link: "https://github.com/MarcoFloresCa/Sistema-de-confirmaci-n-de-asistencia-por-Whatsapp-para-hospital",
   },
 ];
 
 const capabilities = [
   { number: "01", title: "Salesforce", text: "Diseño de objetos, Apex, SOQL, LWC, Flows, reglas de validación, seguridad e integraciones." },
   { number: "02", title: "BI & datos", text: "Qlik Sense, modelado, ETL, reportería, conciliación de datos, lectura de tablas SAP como BSIS, BSAS, BKPF, BSEG y KNA1, e inserción de datos en Salesforce." },
-  { number: "03", title: "Integraciones", text: "APIs REST, OAuth 2.0, JWT, Postman y automatizaciones entre plataformas corporativas." },
-  { number: "04", title: "Entrega técnica", text: "Git, CI/CD, SFDX, sandboxes, documentación y mejora continua de soluciones existentes." },
+  { number: "03", title: "Integraciones", text: "APIs REST, OAuth 2.0, JWT, Postman, Bruno y automatizaciones entre plataformas corporativas." },
+  { number: "04", title: "Entrega técnica", text: "React, TypeScript, Git, CI/CD, Hardis, SFDX, sandboxes, documentación y mejora continua." },
+];
+
+const specialties = [
+  { number: "01", title: "Salesforce Platform" },
+  { number: "02", title: "Business Intelligence" },
+  { number: "03", title: "Integraciones" },
+  { number: "04", title: "Automatización" },
 ];
 
 const experience = [
@@ -111,6 +133,52 @@ function ExternalIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9 8h7v7" /></svg>;
 }
 
+function DownloadIcon() {
+  return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14" /></svg>;
+}
+
+function ContactConstellation() {
+  return (
+    <div className="contact-constellation" aria-hidden="true">
+      <svg viewBox="0 0 520 520">
+        <circle className="constellation-orbit orbit-outer" cx="260" cy="260" r="206" />
+        <circle className="constellation-orbit orbit-inner" cx="260" cy="260" r="132" />
+        <path className="constellation-line line-one" d="M143 138 260 260l125-120" />
+        <path className="constellation-line line-two" d="m260 260 126 125" />
+        <path className="constellation-line line-three" d="m260 260-127 119" />
+
+        <g className="constellation-node node-cloud" transform="translate(78 73)">
+          <circle cx="64" cy="64" r="62" />
+          <image href="/icons/brands/salesforce.svg" x="13" y="24" width="102" height="80" preserveAspectRatio="xMidYMid meet" />
+        </g>
+
+        <g className="constellation-node node-chart" transform="translate(321 74)">
+          <circle cx="64" cy="64" r="62" />
+          <image href="/icons/brands/qlik.svg" x="26" y="26" width="76" height="76" />
+        </g>
+
+        <g className="constellation-node node-api" transform="translate(322 321)">
+          <image href="/icons/systems/integration-nodes.svg" width="128" height="128" />
+        </g>
+
+        <g className="constellation-node node-code" transform="translate(69 315)">
+          <image href="/icons/systems/code-automation.svg" width="128" height="128" />
+        </g>
+
+        <g className="constellation-core">
+          <circle cx="260" cy="260" r="52" />
+          <path d="M239 260h42M260 239v42" />
+          <circle cx="260" cy="260" r="9" />
+        </g>
+
+        <circle className="constellation-spark spark-one" cx="260" cy="54" r="5" />
+        <circle className="constellation-spark spark-two" cx="465" cy="260" r="5" />
+        <circle className="constellation-spark spark-three" cx="260" cy="466" r="5" />
+      </svg>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main>
@@ -119,9 +187,9 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
       <header className="site-header">
-        <a className="brand" href="#inicio" aria-label="Marco Flores, inicio">MF<span>.</span></a>
+        <a className="brand" href="#inicio" aria-label="Marco Flores, inicio">Marco Flores</a>
         <nav aria-label="Navegación principal">
-          <a href="#proyectos">Proyectos</a>
+          <a className="nav-featured" href="#proyectos">Proyectos</a>
           <a href="#perfil">Perfil</a>
           <a href="#experiencia">Trayectoria</a>
         </nav>
@@ -150,15 +218,20 @@ export default function Home() {
             <span className="status-dot" />
             <div><small>Ubicación</small><strong>Mostazal, Chile</strong></div>
           </div>
-          <div className="code-chip">Apex · Qlik · APIs</div>
+          <div className="code-chip">Apex · React · Qlik · APIs</div>
         </div>
-
-        <div className="scroll-cue"><span>Scroll</span><div /></div>
       </section>
 
       <section className="proof-strip" aria-label="Áreas de especialidad">
-        <span>Salesforce Platform</span><i>✦</i><span>Business Intelligence</span><i>✦</i>
-        <span>Integraciones</span><i>✦</i><span>Automatización</span>
+        <ul>
+          {specialties.map((specialty) => (
+            <li key={specialty.number}>
+              <span>{specialty.number}</span>
+              <strong>{specialty.title}</strong>
+              <i aria-hidden="true">✦</i>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="section projects" id="proyectos">
@@ -181,8 +254,28 @@ export default function Home() {
                 <h3>{project.title}</h3>
                 <p className="project-description">{project.description}</p>
                 <div className="tag-list">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                {project.link && (
+                  <a className="project-link" href={project.link} target="_blank" rel="noopener noreferrer">
+                    Ver repositorio <ExternalIcon />
+                  </a>
+                )}
               </div>
-              <div className="project-mark" aria-hidden="true">↗</div>
+              <div className="project-mark" aria-hidden="true">
+                <svg className="project-icon-svg" viewBox="0 0 64 64">
+                  <image
+                    className={project.overlayIcon ? "project-brand-layer" : undefined}
+                    href={project.icon}
+                    x={project.overlayIcon ? 4 : 0}
+                    y={project.overlayIcon ? 4 : 0}
+                    width={project.overlayIcon ? 46 : 64}
+                    height={project.overlayIcon ? 46 : 64}
+                    preserveAspectRatio="xMidYMid meet"
+                  />
+                  {project.overlayIcon && (
+                    <image className="project-bot-layer" href={project.overlayIcon} x="30" y="30" width="32" height="32" />
+                  )}
+                </svg>
+              </div>
             </article>
           ))}
         </div>
@@ -191,7 +284,10 @@ export default function Home() {
       <section className="section profile" id="perfil">
         <div className="profile-statement">
           <p className="eyebrow light"><span /> Mi enfoque</p>
-          <h2>No desarrollo por desarrollar.<br /><em>Entiendo el proceso primero.</em></h2>
+          <h2>
+            <span className="profile-title-small">No desarrollo por desarrollar.</span>
+            <span className="profile-title-large">Entiendo el proceso primero.</span>
+          </h2>
           <p>
             Mi fortaleza está en traducir necesidades operativas y financieras en soluciones técnicas claras.
             Me muevo entre el detalle del dato y la visión completa del negocio para construir herramientas
@@ -224,25 +320,42 @@ export default function Home() {
         </div>
 
         <div className="toolkit" aria-label="Tecnologías">
-          {["Apex", "SOQL", "LWC", "Flow", "Qlik Sense", "JavaScript", "TypeScript", "Python", "Git", "REST APIs", "Postman", "Talend", "SAP"].map((tool) => <span key={tool}>{tool}</span>)}
+          {["Apex", "SOQL", "LWC", "Flow", "React", "Qlik Sense", "JavaScript", "TypeScript", "Python", "Git", "REST APIs", "Postman", "Bruno", "Hardis", "Talend", "SAP"].map((tool) => <span key={tool}>{tool}</span>)}
         </div>
       </section>
 
       <section className="contact" id="contacto">
-        <p className="eyebrow light"><span /> Contacto</p>
-        <h2>¿Construimos algo<br />que haga la diferencia?</h2>
-        <p>Estoy abierto a conversar sobre desarrollo Salesforce, BI, automatización e integración de sistemas.</p>
-        <div className="contact-actions">
-          <a className="button button-light" href="mailto:marcoangeloflorescantillana@gmail.com">Escríbeme <ArrowIcon /></a>
-          <a className="contact-link" href="https://github.com/MarcoFloresCa" target="_blank" rel="noreferrer">github.com/MarcoFloresCa <ExternalIcon /></a>
+        <div className="contact-copy">
+          <p className="eyebrow light"><span /> Contacto</p>
+          <h2>Construyamos algo<br />que haga la diferencia.</h2>
+          <p>Estoy abierto a conversar sobre desarrollo Salesforce, BI, automatización e integración de sistemas.</p>
+          <div className="contact-actions">
+            <a className="button button-light" href="mailto:marcoangeloflorescantillana@gmail.com">Escríbeme <ArrowIcon /></a>
+            <a className="button button-outline-light" href="/marco-flores-cv.pdf" download="Marco Flores C.pdf" target="_blank" rel="noopener">Descargar CV <DownloadIcon /></a>
+          </div>
+          <a className="contact-link" href="https://github.com/MarcoFloresCa" target="_blank" rel="noopener noreferrer">github.com/MarcoFloresCa <ExternalIcon /></a>
         </div>
+        <ContactConstellation />
       </section>
 
       <footer>
-        <a className="brand" href="#inicio">MF<span>.</span></a>
+        <a className="brand" href="#inicio">Marco Flores</a>
         <p>Marco Flores Cantillana · Mostazal, Chile</p>
         <a href="#inicio">Volver arriba ↑</a>
       </footer>
+
+      <a
+        className="floating-whatsapp"
+        href="https://wa.me/56953994713?text=Hola%20Marco%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Escribir a Marco por WhatsApp al +56 9 5399 4713"
+      >
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <image href="/icons/brands/whatsapp.svg" width="32" height="32" />
+        </svg>
+        <span>WhatsApp</span>
+      </a>
     </main>
   );
 }
