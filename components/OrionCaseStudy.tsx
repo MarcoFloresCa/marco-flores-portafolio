@@ -114,7 +114,7 @@ function FlowDiagram() {
       <svg viewBox="0 0 1080 560" role="img" aria-label="Flujo de Orion: de la pregunta a la respuesta determinista">
         <defs>
           <marker id="flow-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="#4c7df0" />
+            <path d="M0 0 L10 5 L0 10 z" fill="#7f9cf5" />
           </marker>
         </defs>
 
