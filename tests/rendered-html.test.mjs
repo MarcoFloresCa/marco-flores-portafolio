@@ -59,9 +59,31 @@ test("renders the portfolio with security headers and SEO metadata", async () =>
   assert.match(html, /href="\/marco-flores-cv\.pdf"[^>]*download="Marco Flores C\.pdf"/i);
   assert.match(html, /whatsapp-web\.js/i);
   assert.match(html, /Sistema-de-confirmaci-n-de-asistencia-por-Whatsapp-para-hospital/i);
-assert.match(html, />React<\/span>/i);
+  assert.match(html, />React<\/span>/i);
   assert.match(html, />Bruno<\/span>/i);
   assert.match(html, />Hardis<\/span>/i);
+  assert.match(html, /\/proyectos\/orion/i);
+  assert.match(html, />Ver case study/i);
+  assert.doesNotMatch(html, /<video /i);
+  assert.doesNotMatch(html, /El asistente que audita lo que dice/i);
+});
+
+test("renders the Orion case study page with videos", async () => {
+  const worker = await loadWorker();
+
+  const response = await worker.fetch(
+    new Request("http://localhost/proyectos/orion", {
+      headers: { accept: "text/html" },
+    }),
+    env,
+    ctx,
+  );
+
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /<title>[^<]*Asistente para entender la l[óo]gica de Salesforce[^<]*<\/title>/i);
+  assert.match(html, /class="case-back"/i);
+  assert.match(html, /href="\/#proyectos"/i);
   assert.match(html, /El asistente que audita lo que dice/i);
   assert.match(html, /Redacta el modelo, decide el c[oó]digo/i);
   assert.match(html, /Respuesta determinista/i);
@@ -80,10 +102,12 @@ test("exposes robots.txt and sitemap.xml", async () => {
   const robotsResponse = await worker.fetch(new Request("http://localhost/robots.txt"), env, ctx);
   const sitemapResponse = await worker.fetch(new Request("http://localhost/sitemap.xml"), env, ctx);
 
-  assert.equal(robotsResponse.status, 200);
+assert.equal(robotsResponse.status, 200);
   assert.match(await robotsResponse.text(), /Sitemap: https:\/\/marcoflores\.cl\/sitemap\.xml/i);
   assert.equal(sitemapResponse.status, 200);
-  assert.match(await sitemapResponse.text(), /<loc>https:\/\/marcoflores\.cl<\/loc>/i);
+  const sitemapText = await sitemapResponse.text();
+  assert.match(sitemapText, /<loc>https:\/\/marcoflores\.cl<\/loc>/i);
+  assert.match(sitemapText, /<loc>https:\/\/marcoflores\.cl\/proyectos\/orion<\/loc>/i);
 });
 
 test("includes the downloadable public assets", async () => {
