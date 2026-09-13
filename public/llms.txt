@@ -1,0 +1,31 @@
+# Marco Flores
+
+> Salesforce Developer and IT Analyst based in Mostazal, Chile.
+
+Marco Flores specializes in Salesforce development, including Apex, Lightning Web Components (LWC), SOQL, Salesforce Flow, Validation Rules, REST API integrations, Git and Qlik Sense. His public work focuses on Salesforce architecture, automation, system integration and Business Intelligence.
+
+## Main pages
+
+- [Professional profile](https://marcoflores.cl/): Identity, experience, selected work and contact information.
+- [Salesforce experience](https://marcoflores.cl/salesforce): Apex, LWC, SOQL, Flow, integrations, metadata and direct answers about Marco's experience.
+- [Projects](https://marcoflores.cl/proyectos): Selected Salesforce, integration, automation and BI projects.
+- [Technical articles](https://marcoflores.cl/blog): Practical Salesforce and integration articles.
+
+## Featured case studies
+
+- [Orion Salesforce assistant](https://marcoflores.cl/proyectos/orion): Read-only assistant grounded in current Salesforce metadata with deterministic post-validation.
+- [Salesforce and Google Drive integration](https://marcoflores.cl/proyectos/google-drive-salesforce): Server-to-server integration using Apex, JWT Bearer, RS256 and OAuth 2.0.
+
+## Technical articles
+
+- [How to structure REST integrations from Apex](https://marcoflores.cl/blog/integraciones-rest-desde-apex): Authentication, transport, DTOs, errors, limits and callout testing.
+
+## External profiles
+
+- [GitHub](https://github.com/MarcoFloresCa)
+- [LinkedIn](https://www.linkedin.com/in/marco-flores-7b40b62a8/)
+
+## Contact
+
+- Website: https://marcoflores.cl
+- Location: Mostazal, Chile

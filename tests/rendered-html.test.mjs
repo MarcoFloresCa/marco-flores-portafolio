@@ -42,7 +42,12 @@ test("renders the portfolio with security headers and SEO metadata", async () =>
   assert.match(html, /<title>Marco Flores \| Desarrollador Salesforce en Chile<\/title>/i);
   assert.match(html, /<link rel="canonical" href="https:\/\/marcoflores\.cl"/i);
   assert.match(html, /<script type="application\/ld\+json">/i);
+  assert.match(html, /"@type":"ProfilePage"/i);
   assert.match(html, /"@type":"Person"/i);
+  assert.match(html, /"@id":"https:\/\/marcoflores\.cl\/#marco-flores"/i);
+  assert.match(html, /https:\/\/www\.linkedin\.com\/in\/marco-flores-7b40b62a8\//i);
+  assert.match(html, /Marco Flores —/i);
+  assert.match(html, /Salesforce Developer<\/em> en Chile/i);
   assert.match(html, />Marco Flores<\/a>/i);
   assert.match(html, /https:\/\/wa\.me\/56953994713\?text=/i);
   assert.match(html, /class="floating-whatsapp"/i);
@@ -63,6 +68,9 @@ test("renders the portfolio with security headers and SEO metadata", async () =>
   assert.match(html, />Bruno<\/span>/i);
   assert.match(html, />Hardis<\/span>/i);
   assert.match(html, /\/proyectos\/orion/i);
+  assert.match(html, /\/proyectos\/google-drive-salesforce/i);
+  assert.match(html, /href="\/salesforce"/i);
+  assert.match(html, /LinkedIn · Marco Flores/i);
   assert.match(html, />Ver case study/i);
   assert.doesNotMatch(html, /<video /i);
   assert.doesNotMatch(html, /El asistente que audita lo que dice/i);
@@ -100,22 +108,60 @@ test("renders the Orion case study page with videos", async () => {
   });
 });
 
+test("renders dedicated Salesforce and project pages", async () => {
+  const worker = await loadWorker();
+  const pages = [
+    ["/salesforce", /Experiencia Salesforce de Marco Flores/i],
+    ["/proyectos", /Proyectos Salesforce, integraciones y datos/i],
+    ["/proyectos/google-drive-salesforce", /Google Drive conectado con Salesforce mediante JWT Bearer/i],
+    ["/blog", /Salesforce explicado desde la implementación/i],
+    ["/blog/integraciones-rest-desde-apex", /Cómo organizar integraciones REST desde Apex/i],
+  ];
+
+  for (const [path, content] of pages) {
+    const response = await worker.fetch(new Request(`http://localhost${path}`, { headers: { accept: "text/html" } }), env, ctx);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    assert.match(html, content);
+    assert.match(html, new RegExp(`<link rel="canonical" href="https:\\/\\/marcoflores\\.cl${path.replaceAll("/", "\\/")}"`, "i"));
+  }
+});
+
+test("publishes extractable Salesforce answers and technical article schema", async () => {
+  const worker = await loadWorker();
+  const salesforceResponse = await worker.fetch(new Request("http://localhost/salesforce", { headers: { accept: "text/html" } }), env, ctx);
+  const articleResponse = await worker.fetch(new Request("http://localhost/blog/integraciones-rest-desde-apex", { headers: { accept: "text/html" } }), env, ctx);
+  const salesforceHtml = await salesforceResponse.text();
+  const articleHtml = await articleResponse.text();
+
+  assert.match(salesforceHtml, /"@type":"FAQPage"/i);
+  assert.match(salesforceHtml, /¿Quién es Marco Flores\?/i);
+  assert.match(salesforceHtml, /Lightning Web Components \(LWC\)/i);
+  assert.match(articleHtml, /"@type":"TechArticle"/i);
+  assert.match(articleHtml, /HttpCalloutMock/i);
+  assert.match(articleHtml, /Named Credentials/i);
+});
+
 test("exposes robots.txt and sitemap.xml", async () => {
   const worker = await loadWorker();
   const robotsResponse = await worker.fetch(new Request("http://localhost/robots.txt"), env, ctx);
   const sitemapResponse = await worker.fetch(new Request("http://localhost/sitemap.xml"), env, ctx);
 
-assert.equal(robotsResponse.status, 200);
+  assert.equal(robotsResponse.status, 200);
   assert.match(await robotsResponse.text(), /Sitemap: https:\/\/marcoflores\.cl\/sitemap\.xml/i);
   assert.equal(sitemapResponse.status, 200);
   const sitemapText = await sitemapResponse.text();
   assert.match(sitemapText, /<loc>https:\/\/marcoflores\.cl<\/loc>/i);
   assert.match(sitemapText, /<loc>https:\/\/marcoflores\.cl\/proyectos\/orion<\/loc>/i);
+  ["salesforce", "proyectos", "proyectos/google-drive-salesforce", "blog", "blog/integraciones-rest-desde-apex"].forEach((path) => {
+    assert.match(sitemapText, new RegExp(`<loc>https:\\/\\/marcoflores\\.cl\\/${path.replaceAll("/", "\\/")}<\\/loc>`, "i"));
+  });
 });
 
 test("includes the downloadable public assets", async () => {
   const assets = [
     "marco-flores-cv.pdf",
+    "llms.txt",
     "favicon.svg",
     "icons/brands/salesforce.svg",
     "icons/brands/whatsapp.svg",

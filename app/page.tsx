@@ -9,7 +9,7 @@ const projects = [
     title: "Asistente para entender la lógica de Salesforce",
     description:
       "Arquitectura de un chatbot de consulta (sin capacidad de modificación) capaz de explicar objetos, campos, relaciones, Flows, Triggers y reglas de validación de una organización Salesforce.",
-    tags: ["Apex", "SOQL", "Metadata API", "MCP", "TypeScript"],
+    tags: ["Apex", "LWC", "SOQL", "Metadata API", "MCP", "TypeScript"],
     link: null,
     caseStudy: "/proyectos/orion",
   },
@@ -23,6 +23,7 @@ const projects = [
       "Integración server-to-server con Service Account y JWT Bearer Flow para crear y organizar carpetas desde Salesforce, cuidando permisos, propiedad y trazabilidad documental.",
     tags: ["Apex", "JWT / RS256", "Google Drive API", "OAuth 2.0"],
     link: null,
+    caseStudy: "/proyectos/google-drive-salesforce",
   },
   {
     index: "03",
@@ -81,50 +82,63 @@ const experience = [
     text: "Desarrollo y automatización sobre Salesforce, soluciones BI en Qlik, integraciones y continuidad de procesos tecnológicos para una compañía financiera.",
   },
   {
-    period: "Formación actual",
-    role: "Ingeniería en Informática",
-    company: "mención Desarrollo de Sistemas",
+    period: "Titulado en abril de 2026",
+    role: "Ingeniería de Ejecución en Informática",
+    company: "mención Desarrollo de Sistemas · AIEP",
     text: "Formación complementada con el título de Técnico de Nivel Superior en Programación y Análisis de Sistemas y especialización continua en Salesforce.",
   },
 ];
 
-const personJsonLd = {
+const profilePageJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Marco Flores Cantillana",
-  givenName: "Marco",
-  familyName: "Flores Cantillana",
+  "@type": "ProfilePage",
+  "@id": "https://marcoflores.cl/#profile-page",
   url: "https://marcoflores.cl",
-  sameAs: ["https://github.com/MarcoFloresCa"],
-  jobTitle: ["Desarrollador Salesforce", "Analista TI"],
+  name: "Marco Flores — Salesforce Developer en Chile",
   description:
-    "Desarrollador Salesforce y Analista TI especializado en Apex, LWC, Flow, integraciones, automatización y Business Intelligence.",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Mostazal",
-    addressRegion: "Región de O'Higgins",
-    addressCountry: "CL",
-  },
-  knowsAbout: [
-    "Salesforce Platform",
-    "Apex",
-    "SOQL",
-    "Lightning Web Components",
-    "Salesforce Flow",
-    "REST APIs",
-    "OAuth 2.0",
-    "Qlik Sense",
-    "Business Intelligence",
-    "Integración de sistemas",
-  ],
-  hasOccupation: {
-    "@type": "Occupation",
-    name: "Desarrollador Salesforce",
-    occupationLocation: {
-      "@type": "Country",
-      name: "Chile",
+    "Perfil profesional de Marco Flores, Salesforce Developer y Analista TI en Chile.",
+  mainEntity: {
+    "@type": "Person",
+    "@id": "https://marcoflores.cl/#marco-flores",
+    name: "Marco Flores",
+    alternateName: "Marco Flores Cantillana",
+    givenName: "Marco",
+    familyName: "Flores",
+    url: "https://marcoflores.cl",
+    sameAs: [
+      "https://github.com/MarcoFloresCa",
+      "https://www.linkedin.com/in/marco-flores-7b40b62a8/",
+    ],
+    jobTitle: ["Salesforce Developer", "Analista TI"],
+    description:
+      "Desarrollador Salesforce y Analista TI en Chile con experiencia profesional en Apex, Lightning Web Components, SOQL, Salesforce Flow, integraciones REST API, Git y Qlik Sense.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Mostazal",
+      addressRegion: "Región de O'Higgins",
+      addressCountry: "CL",
     },
-    skills: "Salesforce, Apex, SOQL, LWC, Flow, integraciones, automatización y APIs REST",
+    knowsAbout: [
+      "Salesforce",
+      "Apex",
+      "Lightning Web Components",
+      "SOQL",
+      "Salesforce Flow",
+      "Validation Rules",
+      "REST APIs",
+      "Git",
+      "Qlik Sense",
+      "Business Intelligence",
+    ],
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Salesforce Developer",
+      occupationLocation: {
+        "@type": "Country",
+        name: "Chile",
+      },
+      skills: "Salesforce, Apex, LWC, SOQL, Flow, integraciones REST API, Git y Qlik Sense",
+    },
   },
 };
 
@@ -187,7 +201,7 @@ export default function Home() {
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }}
       />
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Marco Flores, inicio">Marco Flores</a>
@@ -201,14 +215,15 @@ export default function Home() {
 
       <section className="hero" id="inicio">
         <div className="hero-copy">
-          <p className="eyebrow"><span /> Analista TI & Desarrollador Salesforce</p>
-          <h1>Desarrollador Salesforce.<br />Conecto datos y <em>negocio.</em></h1>
+          <p className="eyebrow"><span /> Apex · LWC · SOQL · Flow · Integraciones</p>
+          <h1 className="entity-title">Marco Flores — <em>Salesforce Developer</em> en Chile</h1>
           <p className="hero-lead">
-            Soy desarrollador Salesforce y Analista TI en Chile. Creo soluciones con Apex, LWC, Flow,
-            Qlik e integraciones que simplifican procesos y ayudan a tomar mejores decisiones.
+            Desarrollador Salesforce y Analista TI en Chile con experiencia profesional en Apex,
+            Lightning Web Components (LWC), SOQL, Salesforce Flow, integraciones REST API, Git y Qlik Sense.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#proyectos">Ver proyectos <ArrowIcon /></a>
+            <a className="button button-primary" href="/salesforce">Experiencia Salesforce <ArrowIcon /></a>
+            <a className="button button-ghost" href="/proyectos">Ver proyectos <ArrowIcon /></a>
             <a className="button button-ghost" href="https://github.com/MarcoFloresCa" target="_blank" rel="noreferrer">GitHub <ExternalIcon /></a>
           </div>
         </div>
@@ -221,7 +236,7 @@ export default function Home() {
             <span className="status-dot" />
             <div><small>Ubicación</small><strong>Mostazal, Chile</strong></div>
           </div>
-          <div className="code-chip">Apex · React · Qlik · APIs</div>
+          <div className="code-chip">Apex · LWC · SOQL · APIs</div>
         </div>
       </section>
 
@@ -358,15 +373,18 @@ export default function Home() {
             <a className="button button-light" href="mailto:marcoangeloflorescantillana@gmail.com">Escríbeme <ArrowIcon /></a>
             <a className="button button-outline-light" href="/marco-flores-cv.pdf" download="CV Marco Flores.pdf" target="_blank" rel="noopener">Descargar CV <DownloadIcon /></a>
           </div>
-          <a className="contact-link" href="https://github.com/MarcoFloresCa" target="_blank" rel="noopener noreferrer">github.com/MarcoFloresCa <ExternalIcon /></a>
+          <div className="contact-profile-links">
+            <a className="contact-link" href="https://github.com/MarcoFloresCa" target="_blank" rel="noopener noreferrer">GitHub · MarcoFloresCa <ExternalIcon /></a>
+            <a className="contact-link" href="https://www.linkedin.com/in/marco-flores-7b40b62a8/" target="_blank" rel="noopener noreferrer">LinkedIn · Marco Flores <ExternalIcon /></a>
+          </div>
         </div>
         <ContactConstellation />
       </section>
 
       <footer>
         <a className="brand" href="#inicio">Marco Flores</a>
-        <p>Marco Flores Cantillana · Mostazal, Chile</p>
-        <a href="#inicio">Volver arriba ↑</a>
+        <p>Salesforce Developer · Mostazal, Chile</p>
+        <a href="/salesforce">Salesforce</a>
       </footer>
 
       <a

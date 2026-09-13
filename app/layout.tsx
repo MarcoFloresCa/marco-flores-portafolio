@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   description:
     "Desarrollador Salesforce y Analista TI en Chile, especializado en Apex, LWC, Flow, integraciones, automatización, Qlik Sense y datos.",
   applicationName: "Portafolio de Marco Flores",
-  authors: [{ name: "Marco Flores Cantillana", url: "https://marcoflores.cl" }],
-  creator: "Marco Flores Cantillana",
-  publisher: "Marco Flores Cantillana",
+  authors: [{ name: "Marco Flores", url: "https://marcoflores.cl" }],
+  creator: "Marco Flores",
+  publisher: "Marco Flores",
   keywords: [
     "desarrollador Salesforce Chile",
     "Salesforce developer Chile",
