@@ -87,6 +87,9 @@ test("renders the Orion case study page with videos", async () => {
   assert.match(html, /El asistente que audita lo que dice/i);
   assert.match(html, /Redacta el modelo, decide el c[oó]digo/i);
   assert.match(html, /Respuesta determinista/i);
+  assert.match(html, /class="flow-track"/i);
+  assert.match(html, /Post-validaci[oó]n/i);
+  assert.match(html, />LWC<\/span>/i);
   assert.match(html, /Por qu[ée] es distinto/i);
   assert.match(html, /Preg[úu]ntale esto/i);
   assert.match(html, /Cómo funciona<\/p>/i);

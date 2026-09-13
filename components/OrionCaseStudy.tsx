@@ -89,7 +89,15 @@ const orionQuestions = [
   },
 ];
 
-const orionStack = ["Apex", "SOQL", "Metadata API", "MCP", "TypeScript", "Node.js"];
+const orionStack = ["Apex", "LWC", "SOQL", "Metadata API", "MCP", "TypeScript", "Node.js"];
+
+const flowSteps = [
+  { title: "Motor de diagnóstico", detail: "clasifica y reúne evidencia" },
+  { title: "Prompt con evidencia", detail: "contexto + referencias" },
+  { title: "Modelo de lenguaje", detail: "redacta la respuesta" },
+  { title: "Post-validación", detail: "contrasta cada afirmación", accent: true },
+  { title: "Usuario", detail: "respuesta con citas" },
+];
 
 function CaseVideoRow({ num, title, text, video }) {
   return (
@@ -99,7 +107,7 @@ function CaseVideoRow({ num, title, text, video }) {
         <h3>{title}</h3>
       </div>
       <figure className="case-frame">
-        <video controls preload="metadata" playsInline>
+        <video controls preload="metadata" playsInline aria-label={`Demostración: ${title}`}>
           <source src={video} type="video/mp4" />
         </video>
       </figure>
@@ -110,67 +118,33 @@ function CaseVideoRow({ num, title, text, video }) {
 
 function FlowDiagram() {
   return (
-    <div className="diagram-wrap">
-      <svg viewBox="0 0 1080 560" role="img" aria-label="Flujo de Orion: de la pregunta a la respuesta determinista">
-        <defs>
-          <marker id="flow-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="#7f9cf5" />
-          </marker>
-        </defs>
+    <figure className="flow-figure">
+      <div className="flow-canvas" role="group" aria-label="Flujo de Orion: del diagnóstico a la respuesta validada">
+        <ol className="flow-track">
+          {flowSteps.map((step, index) => (
+            <li className={step.accent ? "is-accent" : undefined} key={step.title}>
+              <span className="flow-step-index">0{index + 1}</span>
+              <strong>{step.title}</strong>
+              <small>{step.detail}</small>
+            </li>
+          ))}
+        </ol>
 
-        <g className="flow-node">
-          <rect x="40" y="70" width="200" height="160" rx="18" />
-          <text className="flow-num" x="68" y="106">01</text>
-          <text className="flow-title" x="68" y="138">Pregunta</text>
-          <text className="flow-sub" x="68" y="168">El usuario consulta</text>
-          <text className="flow-sub" x="68" y="192">desde el chat de Orion,</text>
-          <text className="flow-sub" x="68" y="216">con contexto previo</text>
-        </g>
-        <g className="flow-node">
-          <rect x="315" y="70" width="200" height="160" rx="18" />
-          <text className="flow-num" x="343" y="106">02</text>
-          <text className="flow-title" x="343" y="138">Modelo del org</text>
-          <text className="flow-sub" x="343" y="168">Metadata API · lectura</text>
-          <text className="flow-sub" x="343" y="192">objetos, campos,</text>
-          <text className="flow-sub" x="343" y="216">relaciones, Flows</text>
-        </g>
-        <g className="flow-node">
-          <rect x="590" y="70" width="200" height="160" rx="18" />
-          <text className="flow-num" x="618" y="106">03</text>
-          <text className="flow-title" x="618" y="138">Diagnóstico</text>
-          <text className="flow-sub" x="618" y="168">intersección entre la</text>
-          <text className="flow-sub" x="618" y="192">pregunta y el modelo,</text>
-          <text className="flow-sub" x="618" y="216">interprete determinista</text>
-        </g>
-        <g className="flow-node">
-          <rect x="865" y="70" width="200" height="160" rx="18" />
-          <text className="flow-num" x="893" y="106">04</text>
-          <text className="flow-title" x="893" y="138">Respuesta</text>
-          <text className="flow-sub" x="893" y="168">determinista y auditable,</text>
-          <text className="flow-sub" x="893" y="192">cita el API name de la</text>
-          <text className="flow-sub" x="893" y="216">metadata consultada</text>
-        </g>
+        <div className="flow-fallback">
+          <span className="flow-branch-label is-source">evidencia ya reunida</span>
+          <div className="flow-result">
+            <strong>Respuesta determinista</strong>
+            <span>lista antes de llamar al modelo</span>
+          </div>
+          <span className="flow-branch-label is-return">si el modelo falla, se usa la ruta verificada</span>
+        </div>
+      </div>
 
-        <path className="flow-arrow" d="M248 150 L307 150" markerEnd="url(#flow-arrow)" />
-        <path className="flow-arrow" d="M523 150 L582 150" markerEnd="url(#flow-arrow)" />
-        <path className="flow-arrow" d="M798 150 L857 150" markerEnd="url(#flow-arrow)" />
-
-        <g className="flow-band">
-          <rect x="40" y="300" width="1025" height="160" rx="18" />
-          <text className="flow-band-title" x="66" y="332">Redacta el modelo, decide el código</text>
-          <text className="flow-band-sub" x="66" y="356">El proceso completo opera en modo lector: describe la metadata, intersecta y arma la respuesta.</text>
-        </g>
-
-        <path className="flow-connector" d="M140 230 L140 296" />
-        <path className="flow-connector" d="M415 230 L415 296" />
-        <path className="flow-connector" d="M690 230 L690 296" />
-        <path className="flow-connector" d="M965 230 L965 296" />
-
-        <text className="flow-check" x="66" y="400"><tspan className="flow-check-accent">→ </tspan>Modelo cierto — la respuesta se redacta con datos vigentes de la metadata</text>
-        <text className="flow-check" x="66" y="426"><tspan className="flow-check-accent">→ </tspan>Lectura — SOQL y describe operan dentro del org, sin DML</text>
-        <text className="flow-check" x="66" y="452"><tspan className="flow-check-accent">→ </tspan>Determinista — misma pregunta y mismo org, misma respuesta</text>
-      </svg>
-    </div>
+      <figcaption className="flow-note">
+        El motor lee el org y prepara primero una respuesta de respaldo. El modelo solo la redacta;
+        la post-validación comprueba cada afirmación y descarta lo que no puede sostener con metadata.
+      </figcaption>
+    </figure>
   );
 }
 
@@ -196,14 +170,13 @@ export function OrionCaseStudy() {
       <section className="case-flow" aria-labelledby="orion-flow-title">
         <div className="case-flow-head">
           <p className="eyebrow light"><span /> Cómo funciona</p>
-          <h3 id="orion-flow-title">Redacta el modelo, decide el código.</h3>
+          <h3 id="orion-flow-title">Redacta el modelo, decide el código</h3>
+          <p className="flow-intro">
+            Orion no delega la verdad al modelo. El motor reúne metadata y evidencia antes de
+            invocarlo; después, una post-validación contrasta la respuesta antes de entregarla.
+          </p>
         </div>
         <FlowDiagram />
-        <p className="flow-note">
-          Toda la cadena opera como lector del org: describe objetos, recorre relaciones,
-          consulta Flows y validaciones, y devuelve una respuesta determinista con citas a la
-          fuente. Ninguna rama del proceso ejecuta cambios en Salesforce.
-        </p>
       </section>
 
       {orionSections.slice(1, 5).map((section) => <CaseVideoRow key={section.num} {...section} />)}
