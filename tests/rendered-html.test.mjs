@@ -59,9 +59,20 @@ test("renders the portfolio with security headers and SEO metadata", async () =>
   assert.match(html, /href="\/marco-flores-cv\.pdf"[^>]*download="Marco Flores C\.pdf"/i);
   assert.match(html, /whatsapp-web\.js/i);
   assert.match(html, /Sistema-de-confirmaci-n-de-asistencia-por-Whatsapp-para-hospital/i);
-  assert.match(html, />React<\/span>/i);
+assert.match(html, />React<\/span>/i);
   assert.match(html, />Bruno<\/span>/i);
   assert.match(html, />Hardis<\/span>/i);
+  assert.match(html, /El asistente que audita lo que dice/i);
+  assert.match(html, /Redacta el modelo, decide el c[oó]digo/i);
+  assert.match(html, /Respuesta determinista/i);
+  assert.match(html, /Por qu[ée] es distinto/i);
+  assert.match(html, /Preg[úu]ntale esto/i);
+  assert.match(html, /Cómo funciona<\/p>/i);
+  assert.equal((html.match(/<video /gi) ?? []).length, 7);
+  assert.ok((html.match(/preload="metadata"/gi) ?? []).length >= 7);
+  ["motor-de-diagnostico", "asistente-contextual", "definiciones-de-diagnostico", "historial-de-chat", "orion-knowledge", "sla", "paneles-de-gobierno"].forEach((slug) => {
+    assert.match(html, new RegExp(`src="\\/videos\\/${slug}\\.mp4"`, "i"));
+  });
 });
 
 test("exposes robots.txt and sitemap.xml", async () => {
@@ -87,6 +98,13 @@ test("includes the downloadable public assets", async () => {
     "icons/projects/asset-trace.svg",
     "icons/systems/integration-nodes.svg",
     "icons/systems/code-automation.svg",
+    "videos/motor-de-diagnostico.mp4",
+    "videos/asistente-contextual.mp4",
+    "videos/definiciones-de-diagnostico.mp4",
+    "videos/historial-de-chat.mp4",
+    "videos/orion-knowledge.mp4",
+    "videos/sla.mp4",
+    "videos/paneles-de-gobierno.mp4",
   ];
 
   await Promise.all(assets.map((asset) => access(new URL(`../public/${asset}`, import.meta.url))));
