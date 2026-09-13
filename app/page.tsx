@@ -356,7 +356,7 @@ export default function Home() {
           <p>Estoy abierto a conversar sobre desarrollo Salesforce, BI, automatización e integración de sistemas.</p>
           <div className="contact-actions">
             <a className="button button-light" href="mailto:marcoangeloflorescantillana@gmail.com">Escríbeme <ArrowIcon /></a>
-            <a className="button button-outline-light" href="/marco-flores-cv.pdf" download="Marco Flores C.pdf" target="_blank" rel="noopener">Descargar CV <DownloadIcon /></a>
+            <a className="button button-outline-light" href="/marco-flores-cv.pdf" download="CV Marco Flores.pdf" target="_blank" rel="noopener">Descargar CV <DownloadIcon /></a>
           </div>
           <a className="contact-link" href="https://github.com/MarcoFloresCa" target="_blank" rel="noopener noreferrer">github.com/MarcoFloresCa <ExternalIcon /></a>
         </div>

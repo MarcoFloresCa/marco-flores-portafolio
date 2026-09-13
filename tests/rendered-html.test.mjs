@@ -56,7 +56,7 @@ test("renders the portfolio with security headers and SEO metadata", async () =>
   assert.match(html, /icons\/brands\/qlik\.svg/i);
   assert.ok((html.match(/icons\/brands\/qlik\.svg/gi) ?? []).length >= 2);
   assert.match(html, /icons\/projects\/bot-assistant\.svg/i);
-  assert.match(html, /href="\/marco-flores-cv\.pdf"[^>]*download="Marco Flores C\.pdf"/i);
+  assert.match(html, /href="\/marco-flores-cv\.pdf"[^>]*download="CV Marco Flores\.pdf"/i);
   assert.match(html, /whatsapp-web\.js/i);
   assert.match(html, /Sistema-de-confirmaci-n-de-asistencia-por-Whatsapp-para-hospital/i);
   assert.match(html, />React<\/span>/i);
