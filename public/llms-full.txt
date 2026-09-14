@@ -23,6 +23,7 @@ Resumen: Desarrollador Salesforce y Analista TI en Chile con experiencia profesi
 ## Experiencia
 
 - **Analista TI — Banagro (2025 — Actualidad):** desarrollo y automatización sobre Salesforce, soluciones BI en Qlik, integraciones y continuidad de procesos tecnológicos para una compañía financiera. Banagro es la división financiera de Empresas Sutil, dedicada al financiamiento agrícola en Chile (https://banagro.cl).
+- **Desarrollador Backend — CESFAM Codegua · Contrato de prácticas (dic. 2023 — feb. 2024):** desarrollo del backend para un chatbot de WhatsApp usando Node.js y JavaScript, junto con PHP y otras tecnologías web, en modalidad híbrida para el centro de salud familiar de Codegua. CESFAM Codegua pertenece a la Ilustre Municipalidad de Codegua (https://municipalidaddecodegua.cl).
 - **Formación:** Ingeniería de Ejecución en Informática (mención Desarrollo de Sistemas), titulado en abril de 2026, Instituto Profesional AIEP (https://www.aiep.cl). Título complementario: Técnico de Nivel Superior en Programación y Análisis de Sistemas.
 
 ## Preguntas frecuentes

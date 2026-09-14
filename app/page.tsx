@@ -88,6 +88,14 @@ const experience = [
     companyUrl: "https://banagro.cl",
     text: "Desarrollo y automatización sobre Salesforce, soluciones BI en Qlik, integraciones y continuidad de procesos tecnológicos para una compañía financiera.",
   },
+  {
+    period: "dic. 2023 — feb. 2024",
+    dateTime: "2023-12",
+    role: "Desarrollador Backend",
+    company: "CESFAM Codegua · Contrato de prácticas",
+    companyUrl: "https://municipalidaddecodegua.cl",
+    text: "Desarrollo del backend para un chatbot de WhatsApp con Node.js y JavaScript, junto con PHP y otras tecnologías web, en modalidad híbrida para el centro de salud familiar CESFAM de Codegua.",
+  },
 ];
 
 const credentials = [
