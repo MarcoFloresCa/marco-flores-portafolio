@@ -370,6 +370,10 @@ footer>a:last-child { text-transform:uppercase; letter-spacing:.08em; }
   .site-footer-nav { flex-wrap:wrap; gap:14px 22px; }
 }
 
+@media (max-width:767px) {
+  .constellation-line,.constellation-node,.constellation-spark { animation:none !important; }
+}
+
 @media (prefers-reduced-motion:reduce) {
   html { scroll-behavior:auto; }
   *,*::before,*::after { transition-duration:.01ms !important; }
