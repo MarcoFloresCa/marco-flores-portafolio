@@ -557,9 +557,11 @@ export default function Home() {
         href="https://wa.me/56953994713?text=Hola%20Marco%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo."
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Escribir por WhatsApp a Marco Flores"
+        aria-label="Escribir a Marco por WhatsApp al +56 9 5399 4713"
       >
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.61 15.07L2 22l5.06-1.32A10 10 0 1 0 12 2Zm5.13 14.1c-.2.6-1.2 1.16-1.66 1.2-.42.04-.96.2-3.23-.67-2.73-1.05-4.45-3.76-4.58-3.93-.14-.18-1.1-1.47-1.1-2.8 0-1.34.7-1.99.95-2.27.25-.28.54-.35.72-.35h.52c.17 0 .4-.06.62.47.24.55.8 1.9.87 2.03.07.13.12.29.02.47-.1.18-.15.28-.3.44-.15.16-.31.36-.45.49-.15.15-.3.31-.13.6.17.29.75 1.24 1.61 2 1.1 1 2.04 1.31 2.33 1.46.29.15.46.13.63-.08.17-.2.74-.86.93-1.16.2-.3.4-.25.66-.15.27.1 1.73.82 2.03.97.3.15.5.23.57.35.08.12.08.6-.13 1.2Z" /></svg>
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <image href="/icons/brands/whatsapp.svg" width="32" height="32" />
+        </svg>
         <span>WhatsApp</span>
       </a>
     </main>
