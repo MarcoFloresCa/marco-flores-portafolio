@@ -27,6 +27,7 @@ export function InteriorFooter() {
         <Link href="/salesforce">Salesforce</Link>
         <Link href="/proyectos">Proyectos</Link>
         <Link href="/blog">Artículos</Link>
+        <Link href="/privacy">Privacidad</Link>
         <a href="https://www.linkedin.com/in/marco-flores-7b40b62a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </nav>
     </footer>

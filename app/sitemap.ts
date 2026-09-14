@@ -44,5 +44,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.75,
     },
+    {
+      url: "https://marcoflores.cl/privacy",
+      lastModified: new Date("2026-09-14"),
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
   ];
 }

@@ -45,6 +45,32 @@ export default function ApexRestArticlePage() {
 
         <section className="article-checklist"><h2>Checklist antes de desplegar</h2><ul><li>Endpoint y autenticación configurables.</li><li>DTOs separados del transporte.</li><li>Status codes y cuerpo validados.</li><li>Errores trazables sin filtrar secretos.</li><li>Límites y asincronía evaluados.</li><li>Mocks para éxito y fallos relevantes.</li></ul></section>
 
+        <section className="article-sources">
+          <h2>Fuentes y referencias</h2>
+          <ul>
+            <li>
+              <a href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_restful_http.htm" target="_blank" rel="noopener noreferrer">Salesforce · HTTP (Outbound Callout)</a>
+              <span>Clases Http, HttpRequest y HttpResponse para callouts en Apex.</span>
+            </li>
+            <li>
+              <a href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_callouts_named_credentials.htm" target="_blank" rel="noopener noreferrer">Salesforce · Named Credentials</a>
+              <span>Mecanismo de plataforma para administrar endpoints y autenticación fuera del código.</span>
+            </li>
+            <li>
+              <a href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_interface_System_HttpCalloutMock.htm" target="_blank" rel="noopener noreferrer">Salesforce · HttpCalloutMock</a>
+              <span>Interface para simular respuestas y probar distintos escenarios de callout.</span>
+            </li>
+            <li>
+              <a href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm" target="_blank" rel="noopener noreferrer">Salesforce · Execution Governors and Limits</a>
+              <span>Límites de callouts y transacciones compartidas en Apex.</span>
+            </li>
+            <li>
+              <a href="https://www.rfc-editor.org/rfc/rfc9110" target="_blank" rel="noopener noreferrer">RFC 9110 · HTTP Semantics</a>
+              <span>Definición del contrato HTTP: métodos, status codes y headers.</span>
+            </li>
+          </ul>
+        </section>
+
         <div className="article-next"><Link href="/proyectos/google-drive-salesforce">Ver este patrón aplicado a Google Drive y Salesforce →</Link></div>
       </article>
       <InteriorFooter />

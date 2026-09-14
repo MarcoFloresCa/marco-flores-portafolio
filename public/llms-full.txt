@@ -1,0 +1,97 @@
+# Marco Flores — Salesforce Developer y Analista TI
+
+> Perfil completo de marcoflores.cl para modelos de lenguaje. Versión resumida: https://marcoflores.cl/llms.txt
+
+## Información principal
+
+- Nombre: Marco Flores (Marco Flores Cantillana)
+- Rol: Salesforce Developer y Analista TI
+- Ubicación: Mostazal, Región de O'Higgins, Chile
+- Empresa actual: Banagro, división financiera de Empresas Sutil dedicada al financiamiento agrícola
+- URL del sitio: https://marcoflores.cl
+
+Resumen: Desarrollador Salesforce y Analista TI en Chile con experiencia profesional en Apex, Lightning Web Components (LWC), SOQL, Salesforce Flow, Validation Rules, integraciones REST API, IA aplicada (LLMs, MCP, agentes de IA), Git y Qlik Sense. Su trabajo combina desarrollo, datos y entendimiento del proceso de negocio.
+
+## Especialidades
+
+1. **Salesforce** — diseño de objetos, Apex, SOQL, LWC, Flows, reglas de validación, seguridad e integraciones.
+2. **IA aplicada** — LLMs, MCP (Model Context Protocol), agentes de IA, chatbots con evidencia y post-validación determinista sobre datos de Salesforce.
+3. **BI y datos** — Qlik Sense, modelado, ETL, reportería, conciliación de datos, lectura de tablas SAP (BSIS, BSAS, BKPF, BSEG, KNA1) e inserción de datos en Salesforce.
+4. **Integraciones** — APIs REST, OAuth 2.0, JWT, Postman, Bruno y automatizaciones entre plataformas corporativas.
+5. **Entrega técnica** — React, TypeScript, Git, CI/CD, Hardis, SFDX, sandboxes, documentación y mejora continua.
+
+## Experiencia
+
+- **Analista TI — Banagro (2025 — Actualidad):** desarrollo y automatización sobre Salesforce, soluciones BI en Qlik, integraciones y continuidad de procesos tecnológicos para una compañía financiera. Banagro es la división financiera de Empresas Sutil, dedicada al financiamiento agrícola en Chile (https://banagro.cl).
+- **Formación:** Ingeniería de Ejecución en Informática (mención Desarrollo de Sistemas), titulado en abril de 2026, Instituto Profesional AIEP (https://www.aiep.cl). Título complementario: Técnico de Nivel Superior en Programación y Análisis de Sistemas.
+
+## Preguntas frecuentes
+
+### ¿Quién es Marco Flores?
+Desarrollador Salesforce y Analista TI en Chile, especializado en Apex, LWC, SOQL, Salesforce Flow, integraciones REST API, IA aplicada con LLMs y MCP, y Qlik Sense.
+
+### ¿Dónde trabaja?
+Trabaja como Analista TI en Banagro, la división financiera de Empresas Sutil dedicada al financiamiento agrícola en Chile, desarrollando sobre Salesforce, Qlik Sense y automatizaciones.
+
+### ¿Qué tecnologías usa como Salesforce Developer?
+Apex, LWC, SOQL, Salesforce Flow, reglas de validación, Metadata API, integraciones REST con OAuth 2.0 y JWT, MCP, LLMs, Git y Qlik Sense.
+
+### ¿Ha trabajado con IA aplicada a Salesforce?
+Sí. Diseñó y desarrolló un asistente que consulta metadata viva de Salesforce con LLMs cuyas respuestas están ancladas en evidencia y validadas de forma determinista, implementado con MCP y TypeScript.
+
+### ¿Cómo contactarlo?
+Por LinkedIn, GitHub, WhatsApp o correo desde la sección de contacto de marcoflores.cl.
+
+## Proyectos seleccionados
+
+### 01 · Asistente para entender la lógica de Salesforce (Orion)
+Salesforce · IA aplicada. Chatbot de consulta solo lectura que explica objetos, campos, relaciones, Flows, Triggers y reglas de validación de una organización Salesforce. Arquitectura con Apex, LWC, SOQL, Metadata API, MCP y TypeScript. Cada respuesta cita la evidencia consultada.
+- Caso: https://marcoflores.cl/proyectos/orion
+
+### 02 · Salesforce conectado con Google Drive
+Integración · Automatización. Integración server-to-server con Service Account y JWT Bearer Flow para crear y organizar carpetas desde Salesforce, cuidando permisos, propiedad y trazabilidad documental. Apex, JWT/RS256, Google Drive API, OAuth 2.0.
+- Caso: https://marcoflores.cl/proyectos/google-drive-salesforce
+
+### 03 · Seguimiento comercial en Qlik Sense
+Business Intelligence. Modelo de control para comparar resultados reales, presupuesto y forecast por campaña, mes, ejecutivo, zona y grupo, con datos contables y maestros leídos de SAP en modo solo lectura.
+
+### 04 · Inventario y trazabilidad de activos TI
+Salesforce · Procesos internos. MVP en Salesforce para gestionar equipos y movimientos, con flujos de altas, bajas, traspasos y aprobaciones. LWC, Apex, Flow.
+
+### 05 · Confirmación de asistencia hospitalaria por WhatsApp
+Salud · Automatización. Carga de agendas desde Excel y envío de confirmaciones a pacientes mediante whatsapp-web.js, con validación de registros, conexión por código QR y persistencia en MySQL. Node.js, MySQL, JavaScript, PHP.
+- Repositorio: https://github.com/MarcoFloresCa/Sistema-de-confirmaci-n-de-asistencia-por-Whatsapp-para-hospital
+
+## Artículos técnicos
+
+- Cómo organizar integraciones REST desde Apex: separación de responsabilidades, Named Credentials, contrato HTTP, errores observables, límites y pruebas con HttpCalloutMock.
+  https://marcoflores.cl/blog/integraciones-rest-desde-apex
+
+## Fuentes y referencias citadas en el sitio
+
+- Salesforce SOQL and SOSL Reference: https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm
+- Salesforce Metadata API: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_intro.htm
+- Salesforce OAuth 2.0 JWT Bearer Flow: https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_jwt_flow.htm
+- Salesforce HTTP (Outbound Callout): https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_restful_http.htm
+- Salesforce Named Credentials: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_callouts_named_credentials.htm
+- Salesforce HttpCalloutMock: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_interface_System_HttpCalloutMock.htm
+- Salesforce Execution Governors and Limits: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm
+- Model Context Protocol: https://modelcontextprotocol.io
+- Model Context Protocol Specification: https://modelcontextprotocol.io/specification
+- RFC 7519 (JWT): https://www.rfc-editor.org/rfc/rfc7519
+- RFC 9110 (HTTP Semantics): https://www.rfc-editor.org/rfc/rfc9110
+- Google Drive API v3: https://developers.google.com/drive/api/reference/rest/v3
+- Google OAuth 2.0 Service Accounts: https://developers.google.com/identity/protocols/oauth2/service-account
+
+## Contacto
+
+- Correo: marcoangeloflorescantillana@gmail.com
+- LinkedIn: https://www.linkedin.com/in/marco-flores-7b40b62a8/
+- GitHub: https://github.com/MarcoFloresCa
+- WhatsApp: https://wa.me/56953994713
+- Sitio: https://marcoflores.cl
+
+## Otros archivos del sitio
+
+- Privacidad y términos: https://marcoflores.cl/privacy
+- Versión corta para LLMs: https://marcoflores.cl/llms.txt

@@ -10,6 +10,8 @@ const projects = [
     description:
       "Arquitectura de un chatbot de consulta (sin capacidad de modificación) capaz de explicar objetos, campos, relaciones, Flows, Triggers y reglas de validación de una organización Salesforce.",
     tags: ["Apex", "LWC", "SOQL", "Metadata API", "MCP", "TypeScript"],
+    impact:
+      "Cada respuesta cita la evidencia consultada (objeto, campo, Flow, Trigger o regla de validación), reduciendo el tiempo de rastreo manual dentro de la organización.",
     link: null,
     caseStudy: "/proyectos/orion",
   },
@@ -22,6 +24,8 @@ const projects = [
     description:
       "Integración server-to-server con Service Account y JWT Bearer Flow para crear y organizar carpetas desde Salesforce, cuidando permisos, propiedad y trazabilidad documental.",
     tags: ["Apex", "JWT / RS256", "Google Drive API", "OAuth 2.0"],
+    impact:
+      "Organización automática de carpetas y documentos desde Salesforce con autenticación de servicio (JWT), sin credenciales embebidas ni intervención manual.",
     link: null,
     caseStudy: "/proyectos/google-drive-salesforce",
   },
@@ -62,32 +66,96 @@ const projects = [
 
 const capabilities = [
   { number: "01", title: "Salesforce", text: "Diseño de objetos, Apex, SOQL, LWC, Flows, reglas de validación, seguridad e integraciones." },
-  { number: "02", title: "BI & datos", text: "Qlik Sense, modelado, ETL, reportería, conciliación de datos, lectura de tablas SAP como BSIS, BSAS, BKPF, BSEG y KNA1, e inserción de datos en Salesforce." },
-  { number: "03", title: "Integraciones", text: "APIs REST, OAuth 2.0, JWT, Postman, Bruno y automatizaciones entre plataformas corporativas." },
-  { number: "04", title: "Entrega técnica", text: "React, TypeScript, Git, CI/CD, Hardis, SFDX, sandboxes, documentación y mejora continua." },
+  { number: "02", title: "IA aplicada", text: "LLMs, MCP (Model Context Protocol), agentes de IA, chatbots con evidencia y post-validación determinista sobre datos de Salesforce." },
+  { number: "03", title: "BI & datos", text: "Qlik Sense, modelado, ETL, reportería, conciliación de datos, lectura de tablas SAP como BSIS, BSAS, BKPF, BSEG y KNA1, e inserción de datos en Salesforce." },
+  { number: "04", title: "Integraciones", text: "APIs REST, OAuth 2.0, JWT, Postman, Bruno y automatizaciones entre plataformas corporativas." },
+  { number: "05", title: "Entrega técnica", text: "React, TypeScript, Git, CI/CD, Hardis, SFDX, sandboxes, documentación y mejora continua." },
 ];
 
 const specialties = [
   { number: "01", title: "Salesforce Platform" },
-  { number: "02", title: "Business Intelligence" },
-  { number: "03", title: "Integraciones" },
-  { number: "04", title: "Automatización" },
+  { number: "02", title: "IA aplicada" },
+  { number: "03", title: "Business Intelligence" },
+  { number: "04", title: "Integraciones" },
 ];
 
 const experience = [
   {
     period: "2025 — Actualidad",
+    dateTime: "2025",
     role: "Analista TI",
     company: "Banagro",
+    companyUrl: "https://banagro.cl",
     text: "Desarrollo y automatización sobre Salesforce, soluciones BI en Qlik, integraciones y continuidad de procesos tecnológicos para una compañía financiera.",
   },
   {
     period: "Titulado en abril de 2026",
+    dateTime: "2026-04",
     role: "Ingeniería de Ejecución en Informática",
     company: "mención Desarrollo de Sistemas · AIEP",
     text: "Formación complementada con el título de Técnico de Nivel Superior en Programación y Análisis de Sistemas y especialización continua en Salesforce.",
   },
 ];
+
+const credentials = [
+  {
+    title: "Ingeniería de Ejecución en Informática",
+    institution: "Instituto Profesional AIEP",
+    year: "Titulado en abril de 2026",
+  },
+  {
+    title: "Técnico de Nivel Superior en Programación y Análisis de Sistemas",
+    institution: "Instituto Profesional AIEP",
+    year: "Título complementario",
+  },
+];
+
+const quickFacts = [
+  { label: "Rol", value: "Salesforce Developer y Analista TI" },
+  { label: "Ubicación", value: "Mostazal, Chile" },
+  { label: "Trabajo actual", value: "Analista TI en Banagro, financiamiento agrícola chileno de Empresas Sutil" },
+  { label: "Ingeniería", value: "Ingeniería de Ejecución en Informática · AIEP" },
+  { label: "Proyectos", value: "5 proyectos seleccionados publicados" },
+  { label: "Stack principal", items: ["Apex", "LWC", "SOQL", "Flow", "IA aplicada", "Qlik Sense"] },
+];
+
+const faqs = [
+  {
+    question: "¿Quién es Marco Flores?",
+    answer:
+      "Marco Flores es un Salesforce Developer y Analista TI en Chile, especializado en Apex, Lightning Web Components (LWC), SOQL, Salesforce Flow, integraciones REST API, IA aplicada con LLMs y MCP, y Qlik Sense.",
+  },
+  {
+    question: "¿Dónde trabaja Marco Flores?",
+    answer:
+      "Trabaja como Analista TI en Banagro, la división financiera de Empresas Sutil dedicada al financiamiento agrícola en Chile, desarrollando sobre Salesforce, Qlik Sense y automatizaciones.",
+  },
+  {
+    question: "¿Qué tecnologías usa como Salesforce Developer?",
+    answer:
+      "Apex, Lightning Web Components (LWC), SOQL, Salesforce Flow, reglas de validación, Metadata API, integraciones REST con OAuth 2.0 y JWT, MCP (Model Context Protocol), LLMs, Git y Qlik Sense.",
+  },
+  {
+    question: "¿Ha trabajado con IA aplicada a Salesforce?",
+    answer:
+      "Sí. Diseñó y desarrolló un asistente que consulta metadata viva de Salesforce utilizando LLMs con respuestas ancladas en evidencia y post-validación determinista, implementado con MCP (Model Context Protocol) y TypeScript.",
+  },
+  {
+    question: "¿Cómo contactar a Marco Flores?",
+    answer:
+      "Se le puede contactar por LinkedIn, GitHub, WhatsApp o correo electrónico desde la sección de contacto de marcoflores.cl.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
 
 const profilePageJsonLd = {
   "@context": "https://schema.org",
@@ -96,7 +164,7 @@ const profilePageJsonLd = {
   url: "https://marcoflores.cl",
   name: "Marco Flores — Salesforce Developer en Chile",
   description:
-    "Perfil profesional de Marco Flores, Salesforce Developer y Analista TI en Chile.",
+    "Perfil profesional de Marco Flores, Salesforce Developer y Analista TI en Chile con experiencia en IA aplicada.",
   mainEntity: {
     "@type": "Person",
     "@id": "https://marcoflores.cl/#marco-flores",
@@ -109,22 +177,56 @@ const profilePageJsonLd = {
       "https://github.com/MarcoFloresCa",
       "https://www.linkedin.com/in/marco-flores-7b40b62a8/",
     ],
+    email: "marcoangeloflorescantillana@gmail.com",
     jobTitle: ["Salesforce Developer", "Analista TI"],
+    worksFor: {
+      "@type": "Organization",
+      "@id": "https://banagro.cl",
+      name: "Banagro",
+      url: "https://banagro.cl",
+      description:
+        "División financiera de Empresas Sutil, especializada en financiamiento agrícola en Chile.",
+    },
     description:
-      "Desarrollador Salesforce y Analista TI en Chile con experiencia profesional en Apex, Lightning Web Components, SOQL, Salesforce Flow, integraciones REST API, Git y Qlik Sense.",
+      "Desarrollador Salesforce y Analista TI en Chile con experiencia profesional en Apex, Lightning Web Components, SOQL, Salesforce Flow, integraciones REST API, IA aplicada (LLMs, MCP, agentes de IA), Git y Qlik Sense.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Mostazal",
       addressRegion: "Región de O'Higgins",
       addressCountry: "CL",
     },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Instituto Profesional AIEP",
+      url: "https://www.aiep.cl",
+    },
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        name: "Ingeniería de Ejecución en Informática",
+        description: "Mención en Desarrollo de Sistemas",
+        dateIssued: "2026-04",
+        recognizedBy: { "@type": "EducationalOrganization", name: "Instituto Profesional AIEP" },
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        name: "Técnico de Nivel Superior en Programación y Análisis de Sistemas",
+        recognizedBy: { "@type": "EducationalOrganization", name: "Instituto Profesional AIEP" },
+      },
+    ],
+    inLanguage: "es-CL",
     knowsAbout: [
       "Salesforce",
       "Apex",
       "Lightning Web Components",
       "SOQL",
       "Salesforce Flow",
-      "Validation Rules",
+      "IA aplicada",
+      "Large Language Models",
+      "Model Context Protocol",
+      "AI Agents",
       "REST APIs",
       "Git",
       "Qlik Sense",
@@ -137,7 +239,7 @@ const profilePageJsonLd = {
         "@type": "Country",
         name: "Chile",
       },
-      skills: "Salesforce, Apex, LWC, SOQL, Flow, integraciones REST API, Git y Qlik Sense",
+      skills: "Salesforce, Apex, LWC, SOQL, Flow, IA aplicada (LLMs, MCP), integraciones REST API, Git y Qlik Sense",
     },
   },
 };
@@ -203,6 +305,10 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Marco Flores, inicio">Marco Flores</a>
         <nav aria-label="Navegación principal">
@@ -215,11 +321,10 @@ export default function Home() {
 
       <section className="hero" id="inicio">
         <div className="hero-copy">
-          <p className="eyebrow"><span /> Apex · LWC · SOQL · Flow · Integraciones</p>
+          <p className="eyebrow"><span /> Apex · LWC · SOQL · Flow · Integraciones · IA aplicada</p>
           <h1 className="entity-title">Marco Flores — <em>Salesforce Developer</em> en Chile</h1>
           <p className="hero-lead">
-            Desarrollador Salesforce y Analista TI en Chile con experiencia profesional en Apex,
-            Lightning Web Components (LWC), SOQL, Salesforce Flow, integraciones REST API, Git y Qlik Sense.
+            Salesforce Developer y Analista TI en Chile con experiencia en Apex, Lightning Web Components (LWC), SOQL, Salesforce Flow, integraciones REST API, IA aplicada con LLMs y MCP, y Qlik Sense.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="/salesforce">Experiencia Salesforce <ArrowIcon /></a>
@@ -236,7 +341,12 @@ export default function Home() {
             <span className="status-dot" />
             <div><small>Ubicación</small><strong>Mostazal, Chile</strong></div>
           </div>
-          <div className="code-chip">Apex · LWC · SOQL · APIs</div>
+          <ul className="code-chip">
+            <li>Apex</li>
+            <li>LWC</li>
+            <li>SOQL</li>
+            <li>IA aplicada</li>
+          </ul>
         </div>
       </section>
 
@@ -252,11 +362,26 @@ export default function Home() {
         </ul>
       </section>
 
+      <section className="quick-facts" aria-label="Datos rápidos de Marco Flores">
+        <h2 className="sr-only">Datos rápidos de Marco Flores</h2>
+        <dl className="quick-facts-grid">
+          {quickFacts.map((fact) => (
+            <div key={fact.label}>
+              <dt>{fact.label}</dt>
+              {fact.items
+                ? <dd><ul>{fact.items.map((item) => <li key={item}>{item}</li>)}</ul></dd>
+                : <dd>{fact.value}</dd>
+              }
+            </div>
+          ))}
+        </dl>
+      </section>
+
       <section className="section projects" id="proyectos">
         <div className="section-heading">
           <div>
             <p className="eyebrow"><span /> Trabajo seleccionado</p>
-            <h2>Proyectos que resuelven<br />problemas reales.</h2>
+            <h2>Proyectos que resuelven problemas reales.</h2>
           </div>
           <p className="section-intro">
             Una selección de iniciativas donde desarrollo, datos y entendimiento del proceso se encuentran.
@@ -272,7 +397,8 @@ export default function Home() {
                   <p>{project.type}</p>
                   <h3>{project.title}</h3>
                   <p className="project-description">{project.description}</p>
-                  <div className="tag-list">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                  <ul className="tag-list">{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
+                  {project.impact && <p className="project-impact">{project.impact}</p>}
                   {project.caseStudy && (
                     <span className="project-case-link">
                       Ver case study <ArrowIcon />
@@ -352,31 +478,67 @@ export default function Home() {
         <div className="timeline">
           {experience.map((item) => (
             <article key={item.period}>
-              <p className="timeline-period">{item.period}</p>
-              <div><h3>{item.role}</h3><p className="timeline-company">{item.company}</p></div>
+              <p className="timeline-period"><time dateTime={item.dateTime}>{item.period}</time></p>
+              <div>
+                <h3>{item.role}</h3>
+                <p className="timeline-company">
+                  {item.companyUrl
+                    ? <a href={item.companyUrl} target="_blank" rel="noopener noreferrer">{item.company}</a>
+                    : item.company
+                  }
+                </p>
+              </div>
               <p className="timeline-copy">{item.text}</p>
             </article>
           ))}
         </div>
 
-        <div className="toolkit" aria-label="Tecnologías">
-          {["Apex", "SOQL", "LWC", "Flow", "React", "Qlik Sense", "JavaScript", "TypeScript", "Python", "Git", "REST APIs", "Postman", "Bruno", "Hardis", "Talend", "SAP"].map((tool) => <span key={tool}>{tool}</span>)}
+        <div className="credentials">
+          <h3>Formación y credenciales</h3>
+          <ul>
+            {credentials.map((item) => (
+              <li key={item.title}>
+                <strong>{item.title}</strong>
+                <span>{item.institution}{item.year ? ` · ${item.year}` : ""}</span>
+              </li>
+            ))}
+          </ul>
         </div>
+
+        <ul className="toolkit" aria-label="Tecnologías">
+          {["Apex", "SOQL", "LWC", "Flow", "IA aplicada", "React", "Qlik Sense", "JavaScript", "TypeScript", "Python", "Git", "REST APIs", "Postman", "Bruno", "Hardis", "Talend", "SAP"].map((tool) => <li key={tool}>{tool}</li>)}
+        </ul>
+      </section>
+
+      <section className="section faq" id="faq">
+        <div className="section-heading compact">
+          <div><p className="eyebrow"><span /> Preguntas frecuentes</p><h2>Respuestas directas.</h2></div>
+        </div>
+        <dl className="entity-faq">
+          {faqs.map((faq) => (
+            <div key={faq.question}>
+              <dt>{faq.question}</dt>
+              <dd>{faq.answer}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       <section className="contact" id="contacto">
         <div className="contact-copy">
           <p className="eyebrow light"><span /> Contacto</p>
-          <h2>Construyamos algo<br />que haga la diferencia.</h2>
-          <p>Estoy abierto a conversar sobre desarrollo Salesforce, BI, automatización e integración de sistemas.</p>
+          <h2>Construyamos algo que haga la diferencia.</h2>
+          <p>Estoy abierto a conversar sobre desarrollo Salesforce, IA aplicada, BI, automatización e integración de sistemas.</p>
           <div className="contact-actions">
             <a className="button button-light" href="mailto:marcoangeloflorescantillana@gmail.com">Escríbeme <ArrowIcon /></a>
             <a className="button button-outline-light" href="/marco-flores-cv.pdf" download="CV Marco Flores.pdf" target="_blank" rel="noopener">Descargar CV <DownloadIcon /></a>
           </div>
-          <div className="contact-profile-links">
-            <a className="contact-link" href="https://github.com/MarcoFloresCa" target="_blank" rel="noopener noreferrer">GitHub · MarcoFloresCa <ExternalIcon /></a>
-            <a className="contact-link" href="https://www.linkedin.com/in/marco-flores-7b40b62a8/" target="_blank" rel="noopener noreferrer">LinkedIn · Marco Flores <ExternalIcon /></a>
-          </div>
+          <ul className="contact-methods">
+            <li><a className="contact-link" href="mailto:marcoangeloflorescantillana@gmail.com">Email · marcoangeloflorescantillana@gmail.com <ExternalIcon /></a></li>
+            <li><a className="contact-link" href="https://www.linkedin.com/in/marco-flores-7b40b62a8/" target="_blank" rel="noopener noreferrer">LinkedIn · Marco Flores <ExternalIcon /></a></li>
+            <li><a className="contact-link" href="https://github.com/MarcoFloresCa" target="_blank" rel="noopener noreferrer">GitHub · MarcoFloresCa <ExternalIcon /></a></li>
+            <li><a className="contact-link" href="https://wa.me/56953994713?text=Hola%20Marco%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo." target="_blank" rel="noopener noreferrer">WhatsApp · +56 9 5399 4713 <ExternalIcon /></a></li>
+          </ul>
         </div>
         <ContactConstellation />
       </section>
@@ -384,7 +546,10 @@ export default function Home() {
       <footer>
         <a className="brand" href="#inicio">Marco Flores</a>
         <p>Salesforce Developer · Mostazal, Chile</p>
-        <a href="/salesforce">Salesforce</a>
+        <nav aria-label="Pie de página">
+          <a href="/salesforce">Salesforce</a>
+          <a href="/privacy">Privacidad</a>
+        </nav>
       </footer>
 
       <a
@@ -392,11 +557,9 @@ export default function Home() {
         href="https://wa.me/56953994713?text=Hola%20Marco%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo."
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Escribir a Marco por WhatsApp al +56 9 5399 4713"
+        aria-label="Escribir por WhatsApp a Marco Flores"
       >
-        <svg viewBox="0 0 32 32" aria-hidden="true">
-          <image href="/icons/brands/whatsapp.svg" width="32" height="32" />
-        </svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.61 15.07L2 22l5.06-1.32A10 10 0 1 0 12 2Zm5.13 14.1c-.2.6-1.2 1.16-1.66 1.2-.42.04-.96.2-3.23-.67-2.73-1.05-4.45-3.76-4.58-3.93-.14-.18-1.1-1.47-1.1-2.8 0-1.34.7-1.99.95-2.27.25-.28.54-.35.72-.35h.52c.17 0 .4-.06.62.47.24.55.8 1.9.87 2.03.07.13.12.29.02.47-.1.18-.15.28-.3.44-.15.16-.31.36-.45.49-.15.15-.3.31-.13.6.17.29.75 1.24 1.61 2 1.1 1 2.04 1.31 2.33 1.46.29.15.46.13.63-.08.17-.2.74-.86.93-1.16.2-.3.4-.25.66-.15.27.1 1.73.82 2.03.97.3.15.5.23.57.35.08.12.08.6-.13 1.2Z" /></svg>
         <span>WhatsApp</span>
       </a>
     </main>

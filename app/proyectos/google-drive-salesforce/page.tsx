@@ -56,6 +56,28 @@ export default function GoogleDriveSalesforcePage() {
 
         <aside className="article-note"><strong>Alcance público</strong><p>Este caso describe el patrón técnico y omite credenciales, nombres internos, datos y configuración privada de la organización.</p></aside>
 
+        <section className="article-sources">
+          <h2>Fuentes y referencias</h2>
+          <ul>
+            <li>
+              <a href="https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_jwt_flow.htm" target="_blank" rel="noopener noreferrer">Salesforce · OAuth 2.0 JWT Bearer Flow</a>
+              <span>Flujo de autenticación server-to-server usado por la cuenta de servicio.</span>
+            </li>
+            <li>
+              <a href="https://www.rfc-editor.org/rfc/rfc7519" target="_blank" rel="noopener noreferrer">RFC 7519 · JSON Web Token (JWT)</a>
+              <span>Formato de la aserción firmada con RS256 intercambiada por un access token.</span>
+            </li>
+            <li>
+              <a href="https://developers.google.com/drive/api/reference/rest/v3" target="_blank" rel="noopener noreferrer">Google Drive API v3 · Reference</a>
+              <span>Recurso Files y operaciones para crear y organizar la estructura documental.</span>
+            </li>
+            <li>
+              <a href="https://developers.google.com/identity/protocols/oauth2/service-account" target="_blank" rel="noopener noreferrer">Google · OAuth 2.0 Service Accounts</a>
+              <span>Autorización de la cuenta de servicio y ámbito de la integración.</span>
+            </li>
+          </ul>
+        </section>
+
         <div className="article-next"><Link href="/blog/integraciones-rest-desde-apex">Continuar: cómo organizar integraciones REST desde Apex →</Link></div>
       </article>
       <InteriorFooter />

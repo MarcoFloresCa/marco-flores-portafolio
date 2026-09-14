@@ -219,9 +219,9 @@ export function OrionCaseStudy() {
           <span className="case-num">12</span>
           <h3>Stack</h3>
         </div>
-        <div className="toolkit" aria-label="Stack de Orion">
-          {orionStack.map((tool) => <span key={tool}>{tool}</span>)}
-        </div>
+        <ul className="toolkit" aria-label="Stack de Orion">
+          {orionStack.map((tool) => <li key={tool}>{tool}</li>)}
+        </ul>
       </section>
 
       <section className="case-note case-status">
@@ -234,6 +234,28 @@ export function OrionCaseStudy() {
           conocimiento curado y paneles de gobierno. Siguientes hitos: ampliar el conocimiento
           por objeto y profundizar la cobertura de Flows y reglas de validación.
         </p>
+      </section>
+
+      <section className="article-sources case-sources">
+        <h2>Fuentes y referencias</h2>
+        <ul>
+          <li>
+            <a href="https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm" target="_blank" rel="noopener noreferrer">Salesforce · SOQL and SOSL Reference</a>
+            <span>Consulta de esquema, objetos, campos y relaciones en tiempo real.</span>
+          </li>
+          <li>
+            <a href="https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_intro.htm" target="_blank" rel="noopener noreferrer">Salesforce · Metadata API Developer Guide</a>
+            <span>Lectura de Flows, Triggers y reglas de validación como metadata vigente.</span>
+          </li>
+          <li>
+            <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer">Model Context Protocol · Documentation</a>
+            <span>Protocolo que conecta el asistente con herramientas y datos de la organización.</span>
+          </li>
+          <li>
+            <a href="https://modelcontextprotocol.io/specification" target="_blank" rel="noopener noreferrer">Model Context Protocol · Specification</a>
+            <span>Contratos de contexto, herramientas y recursos usados en la arquitectura.</span>
+          </li>
+        </ul>
       </section>
     </article>
   );
