@@ -88,13 +88,6 @@ const experience = [
     companyUrl: "https://banagro.cl",
     text: "Desarrollo y automatización sobre Salesforce, soluciones BI en Qlik, integraciones y continuidad de procesos tecnológicos para una compañía financiera.",
   },
-  {
-    period: "Titulado en abril de 2026",
-    dateTime: "2026-04",
-    role: "Ingeniería de Ejecución en Informática",
-    company: "mención Desarrollo de Sistemas · AIEP",
-    text: "Formación complementada con el título de Técnico de Nivel Superior en Programación y Análisis de Sistemas y especialización continua en Salesforce.",
-  },
 ];
 
 const credentials = [
@@ -495,9 +488,10 @@ export default function Home() {
 
         <div className="credentials">
           <h3>Formación y credenciales</h3>
-          <ul>
-            {credentials.map((item) => (
-              <li key={item.title}>
+          <ul className="credentials-grid">
+            {credentials.map((item, index) => (
+              <li className="credentials-card" key={item.title}>
+                <span className="credentials-badge">0{index + 1}</span>
                 <strong>{item.title}</strong>
                 <span>{item.institution}{item.year ? ` · ${item.year}` : ""}</span>
               </li>
@@ -534,10 +528,8 @@ export default function Home() {
             <a className="button button-outline-light" href="/marco-flores-cv.pdf" download="CV Marco Flores.pdf" target="_blank" rel="noopener">Descargar CV <DownloadIcon /></a>
           </div>
           <ul className="contact-methods">
-            <li><a className="contact-link" href="mailto:marcoangeloflorescantillana@gmail.com">Email · marcoangeloflorescantillana@gmail.com <ExternalIcon /></a></li>
             <li><a className="contact-link" href="https://www.linkedin.com/in/marco-flores-7b40b62a8/" target="_blank" rel="noopener noreferrer">LinkedIn · Marco Flores <ExternalIcon /></a></li>
             <li><a className="contact-link" href="https://github.com/MarcoFloresCa" target="_blank" rel="noopener noreferrer">GitHub · MarcoFloresCa <ExternalIcon /></a></li>
-            <li><a className="contact-link" href="https://wa.me/56953994713?text=Hola%20Marco%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo." target="_blank" rel="noopener noreferrer">WhatsApp · +56 9 5399 4713 <ExternalIcon /></a></li>
           </ul>
         </div>
         <ContactConstellation />
