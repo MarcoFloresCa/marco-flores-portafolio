@@ -160,8 +160,9 @@ test("exposes robots.txt and sitemap.xml", async () => {
 
 test("includes the downloadable public assets", async () => {
   const assets = [
-    "marco-flores-cv.pdf",
+"marco-flores-cv.pdf",
     "llms.txt",
+    "fkgASnp9aWOV31AW5ojcevitGaXWTiUc.txt",
     "favicon.svg",
     "icons/brands/salesforce.svg",
     "icons/brands/whatsapp.svg",
