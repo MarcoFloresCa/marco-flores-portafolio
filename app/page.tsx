@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 
 const projects = [
   {
@@ -113,7 +114,7 @@ const credentials = [
 
 const quickFacts = [
   { label: "Rol", value: "Salesforce Developer y Analista TI" },
-  { label: "Ubicación", value: "Mostazal, Chile" },
+  { label: "Ubicación", value: "Mostazal, Región de O'Higgins (Sexta Región), Chile" },
   { label: "Trabajo actual", value: "Analista TI en Banagro, financiamiento agrícola chileno de Empresas Sutil" },
   { label: "Ingeniería", value: "Ingeniería de Ejecución en Informática · AIEP" },
   { label: "Proyectos", value: "5 proyectos seleccionados publicados" },
@@ -124,7 +125,7 @@ const faqs = [
   {
     question: "¿Quién es Marco Flores?",
     answer:
-      "Marco Flores es un Salesforce Developer y Analista TI en Chile, especializado en Apex, Lightning Web Components (LWC), SOQL, Salesforce Flow, integraciones REST API, IA aplicada con LLMs y MCP, y Qlik Sense.",
+      "Marco Flores es un Salesforce Developer y Analista TI en Mostazal, Región de O'Higgins, Chile, especializado en Apex, Lightning Web Components (LWC), SOQL, Salesforce Flow, integraciones REST API, IA aplicada con LLMs y MCP, y Qlik Sense.",
   },
   {
     question: "¿Dónde trabaja Marco Flores?",
@@ -237,8 +238,8 @@ const profilePageJsonLd = {
       "@type": "Occupation",
       name: "Salesforce Developer",
       occupationLocation: {
-        "@type": "Country",
-        name: "Chile",
+        "@type": "AdministrativeArea",
+        name: "Región de O'Higgins, Chile",
       },
       skills: "Salesforce, Apex, LWC, SOQL, Flow, IA aplicada (LLMs, MCP), integraciones REST API, Git y Qlik Sense",
     },
@@ -310,22 +311,14 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <header className="site-header">
-        <a className="brand" href="#inicio" aria-label="Marco Flores, inicio">Marco Flores</a>
-        <nav aria-label="Navegación principal">
-          <a className="nav-featured" href="#proyectos">Proyectos</a>
-          <a href="#perfil">Perfil</a>
-          <a href="#experiencia">Trayectoria</a>
-        </nav>
-        <a className="header-contact" href="#contacto">Hablemos <ArrowIcon /></a>
-      </header>
+      <SiteHeader />
 
       <section className="hero" id="inicio">
         <div className="hero-copy">
           <p className="eyebrow"><span /> Apex · LWC · SOQL · Flow · Integraciones · IA aplicada</p>
           <h1 className="entity-title">Marco Flores — <em>Salesforce Developer</em> en Chile</h1>
           <p className="hero-lead">
-            Salesforce Developer y Analista TI en Chile con experiencia en Apex, Lightning Web Components (LWC), SOQL, Salesforce Flow, integraciones REST API, IA aplicada con LLMs y MCP, y Qlik Sense.
+            Salesforce Developer y Analista TI en Mostazal, Región de O&apos;Higgins, Chile, con experiencia en Apex, Lightning Web Components (LWC), SOQL, Salesforce Flow, integraciones REST API, IA aplicada con LLMs y MCP, y Qlik Sense.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="/salesforce">Experiencia Salesforce <ArrowIcon /></a>
@@ -364,7 +357,18 @@ export default function Home() {
       </section>
 
       <section className="quick-facts" aria-label="Datos rápidos de Marco Flores">
-        <h2 className="sr-only">Datos rápidos de Marco Flores</h2>
+        <div className="quick-facts-heading">
+          <div>
+            <p className="section-kicker">Perfil profesional</p>
+            <h2>Datos rápidos de Marco Flores</h2>
+          </div>
+          <nav className="home-section-nav" aria-label="Secciones de la portada">
+            <a href="#perfil">Perfil</a>
+            <a href="#experiencia">Trayectoria</a>
+            <a href="#faq">Preguntas</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+        </div>
         <dl className="quick-facts-grid">
           {quickFacts.map((fact) => (
             <div key={fact.label}>
@@ -543,14 +547,7 @@ export default function Home() {
         <ContactConstellation />
       </section>
 
-      <footer>
-        <a className="brand" href="#inicio">Marco Flores</a>
-        <p>Salesforce Developer · Mostazal, Chile</p>
-        <nav aria-label="Pie de página">
-          <a href="/salesforce">Salesforce</a>
-          <a href="/privacy">Privacidad</a>
-        </nav>
-      </footer>
+      <SiteFooter />
 
       <a
         className="floating-whatsapp"

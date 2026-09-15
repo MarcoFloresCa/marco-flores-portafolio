@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import { InteriorFooter, InteriorHeader } from "../../components/SiteChrome";
+import { Breadcrumbs, SiteFooter, SiteHeader } from "../../components/SiteChrome";
+import { createPageMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Proyectos Salesforce, integraciones y BI",
   description:
     "Proyectos de Marco Flores en Salesforce, Apex, LWC, integraciones REST, Google Drive, inteligencia artificial, Qlik Sense y automatización.",
-  alternates: { canonical: "/proyectos" },
-};
+  path: "/proyectos",
+});
 
 const projectIndex = [
   {
@@ -57,9 +57,9 @@ const projectIndex = [
 export default function ProjectsPage() {
   return (
     <main className="case-page topic-page">
-      <InteriorHeader />
+      <SiteHeader active="projects" />
       <div className="topic-page-body">
-        <nav className="breadcrumbs" aria-label="Migas de pan"><Link href="/">Inicio</Link><span>/</span><span>Proyectos</span></nav>
+        <Breadcrumbs items={[{ label: "Proyectos" }]} />
         <header className="topic-hero compact">
           <p className="eyebrow"><span /> Trabajo seleccionado</p>
           <h1>Proyectos Salesforce, integraciones y datos</h1>
@@ -85,7 +85,7 @@ export default function ProjectsPage() {
           ))}
         </section>
       </div>
-      <InteriorFooter />
+      <SiteFooter />
     </main>
   );
 }

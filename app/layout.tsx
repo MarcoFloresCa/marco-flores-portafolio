@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | Marco Flores",
   },
   description:
-    "Desarrollador Salesforce y Analista TI en Chile, especializado en Apex, LWC, Flow, integraciones, automatización, Qlik Sense y datos.",
+    "Desarrollador Salesforce y Analista TI en Mostazal, Región de O'Higgins, Chile, especializado en Apex, LWC, Flow, integraciones, automatización y Qlik Sense.",
   applicationName: "Portafolio de Marco Flores",
   authors: [{ name: "Marco Flores", url: "https://marcoflores.cl" }],
   creator: "Marco Flores",
@@ -27,6 +27,8 @@ export const metadata: Metadata = {
     "Salesforce Flow",
     "integraciones Salesforce",
     "analista TI Chile",
+    "Salesforce developer Región de O'Higgins",
+    "desarrollador Salesforce Sexta Región",
     "Qlik Sense",
   ],
   category: "technology",
@@ -63,6 +65,23 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://marcoflores.cl/#website",
+  url: "https://marcoflores.cl",
+  name: "Marco Flores | Salesforce Developer",
+  inLanguage: "es-CL",
+  publisher: { "@id": "https://marcoflores.cl/#marco-flores" },
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="es"><body className={`${archivo.variable} ${spaceGrotesk.variable}`}>{children}</body></html>;
+  return (
+    <html lang="es-CL">
+      <body className={`${archivo.variable} ${spaceGrotesk.variable}`}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+        {children}
+      </body>
+    </html>
+  );
 }

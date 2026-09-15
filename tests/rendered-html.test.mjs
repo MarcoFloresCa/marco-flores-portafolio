@@ -39,11 +39,13 @@ test("renders the portfolio with security headers and SEO metadata", async () =>
   );
   assert.equal(response.headers.get("x-content-type-options"), "nosniff");
   const html = await response.text();
+  assert.match(html, /<html lang="es-CL">/i);
   assert.match(html, /<title>Marco Flores \| Desarrollador Salesforce en Chile<\/title>/i);
   assert.match(html, /<link rel="canonical" href="https:\/\/marcoflores\.cl"/i);
   assert.match(html, /<script type="application\/ld\+json">/i);
   assert.match(html, /"@type":"ProfilePage"/i);
   assert.match(html, /"@type":"Person"/i);
+  assert.match(html, /"@type":"WebSite"/i);
   assert.match(html, /"@id":"https:\/\/marcoflores\.cl\/#marco-flores"/i);
   assert.match(html, /https:\/\/www\.linkedin\.com\/in\/marco-flores-7b40b62a8\//i);
   assert.match(html, /Marco Flores —/i);
@@ -52,7 +54,11 @@ test("renders the portfolio with security headers and SEO metadata", async () =>
   assert.match(html, /https:\/\/wa\.me\/56953994713\?text=/i);
   assert.match(html, /class="floating-whatsapp"/i);
   assert.match(html, /class="contact-constellation"/i);
-  assert.match(html, /class="nav-featured"[^>]*href="#proyectos"/i);
+  assert.match(html, /class="desktop-nav"/i);
+  assert.match(html, /class="mobile-nav"/i);
+  assert.match(html, /href="\/salesforce"/i);
+  assert.match(html, /href="\/proyectos"/i);
+  assert.match(html, /href="\/blog"/i);
   assert.doesNotMatch(html, /class="contact-expertise"/i);
   assert.doesNotMatch(html, />Scroll</i);
   assert.doesNotMatch(html, /QlikView/i);
@@ -74,6 +80,9 @@ assert.match(html, /whatsapp-web\.js/i);
   assert.match(html, />Ver case study/i);
   assert.match(html, /"@type":"FAQPage"/i);
   assert.match(html, /class="quick-facts-grid"/i);
+  assert.match(html, /Datos rápidos de Marco Flores/i);
+  assert.match(html, /Región de O(?:&#x27;|')Higgins \(Sexta Región\), Chile/i);
+  assert.match(html, /class="home-section-nav"/i);
   assert.match(html, /class="contact-methods"/i);
   assert.match(html, /class="credentials"/i);
   assert.match(html, /<time dateTime="2025">2025 — Actualidad<\/time>/i);
@@ -102,9 +111,9 @@ test("renders the Orion case study page with videos", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /<title>[^<]*Asistente para entender la l[óo]gica de Salesforce[^<]*<\/title>/i);
-  assert.match(html, /class="case-back"/i);
-  assert.match(html, /href="\/#proyectos"/i);
-  assert.match(html, /El asistente que audita lo que dice/i);
+  assert.match(html, /class="breadcrumbs"/i);
+  assert.match(html, /"@type":"BreadcrumbList"/i);
+  assert.match(html, /<h1>El asistente que audita lo que dice<\/h1>/i);
   assert.match(html, /Redacta el modelo, decide el c[oó]digo/i);
   assert.match(html, /Respuesta determinista/i);
   assert.match(html, /class="flow-track"/i);
@@ -138,6 +147,13 @@ test("renders dedicated Salesforce and project pages", async () => {
     assert.equal(response.status, 200, path);
     const html = await response.text();
     assert.match(html, content);
+    assert.match(html, new RegExp(`<meta property="og:url" content="https:\/\/marcoflores\\.cl${path.replaceAll("/", "\\/")}"`, "i"));
+    assert.match(html, /class="desktop-nav"/i);
+    assert.match(html, /class="mobile-nav"/i);
+    assert.match(html, /href="\/salesforce"/i);
+    assert.match(html, /href="\/proyectos"/i);
+    assert.match(html, /href="\/blog"/i);
+    assert.match(html, /"@type":"BreadcrumbList"/i);
     assert.match(html, new RegExp(`<link rel="canonical" href="https:\\/\\/marcoflores\\.cl${path.replaceAll("/", "\\/")}"`, "i"));
   }
 });
@@ -168,7 +184,7 @@ test("publishes extractable Salesforce answers and technical article schema", as
   assert.equal(privacyResponse.status, 200);
   assert.match(privacyHtml, /Privacidad y términos/i);
   assert.match(privacyHtml, /class="breadcrumbs"/i);
-  assert.match(privacyHtml, /href="\/#inicio"/i);
+  assert.match(privacyHtml, /href="\/"/i);
 });
 
 test("exposes robots.txt and sitemap.xml", async () => {

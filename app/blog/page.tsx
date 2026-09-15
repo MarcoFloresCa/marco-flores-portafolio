@@ -1,19 +1,19 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import { InteriorFooter, InteriorHeader } from "../../components/SiteChrome";
+import { Breadcrumbs, SiteFooter, SiteHeader } from "../../components/SiteChrome";
+import { createPageMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Artículos sobre Salesforce, Apex e integraciones",
   description: "Artículos técnicos de Marco Flores sobre Salesforce, Apex, LWC, SOQL, APIs REST, automatización e integración de sistemas.",
-  alternates: { canonical: "/blog" },
-};
+  path: "/blog",
+});
 
 export default function BlogPage() {
   return (
     <main className="case-page topic-page">
-      <InteriorHeader />
+      <SiteHeader active="articles" />
       <div className="topic-page-body">
-        <nav className="breadcrumbs" aria-label="Migas de pan"><Link href="/">Inicio</Link><span>/</span><span>Artículos</span></nav>
+        <Breadcrumbs items={[{ label: "Artículos" }]} />
         <header className="topic-hero compact">
           <p className="eyebrow"><span /> Notas técnicas</p>
           <h1>Salesforce explicado desde la implementación</h1>
@@ -35,7 +35,7 @@ export default function BlogPage() {
           </article>
         </section>
       </div>
-      <InteriorFooter />
+      <SiteFooter />
     </main>
   );
 }

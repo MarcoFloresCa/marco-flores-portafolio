@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import { InteriorFooter, InteriorHeader } from "../../../components/SiteChrome";
+import { Breadcrumbs, SiteFooter, SiteHeader } from "../../../components/SiteChrome";
+import { createPageMetadata } from "../../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Integración Salesforce con Google Drive mediante JWT",
   description:
     "Caso técnico de Marco Flores: arquitectura de una integración server-to-server entre Salesforce y Google Drive con Apex, JWT Bearer, RS256 y OAuth 2.0.",
-  alternates: { canonical: "/proyectos/google-drive-salesforce" },
-};
+  path: "/proyectos/google-drive-salesforce",
+  type: "article",
+});
 
 const articleJsonLd = {
   "@context": "https://schema.org",
@@ -23,9 +24,9 @@ export default function GoogleDriveSalesforcePage() {
   return (
     <main className="case-page topic-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <InteriorHeader />
+      <SiteHeader active="projects" />
       <article className="article-page">
-        <nav className="breadcrumbs" aria-label="Migas de pan"><Link href="/">Inicio</Link><span>/</span><Link href="/proyectos">Proyectos</Link><span>/</span><span>Google Drive</span></nav>
+        <Breadcrumbs items={[{ label: "Proyectos", href: "/proyectos" }, { label: "Google Drive" }]} />
         <header className="article-hero">
           <p className="eyebrow"><span /> Caso técnico · Salesforce</p>
           <h1>Google Drive conectado con Salesforce mediante JWT Bearer</h1>
@@ -80,7 +81,7 @@ export default function GoogleDriveSalesforcePage() {
 
         <div className="article-next"><Link href="/blog/integraciones-rest-desde-apex">Continuar: cómo organizar integraciones REST desde Apex →</Link></div>
       </article>
-      <InteriorFooter />
+      <SiteFooter />
     </main>
   );
 }

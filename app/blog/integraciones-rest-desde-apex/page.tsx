@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import { InteriorFooter, InteriorHeader } from "../../../components/SiteChrome";
+import { Breadcrumbs, SiteFooter, SiteHeader } from "../../../components/SiteChrome";
+import { createPageMetadata } from "../../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Cómo organizar integraciones REST desde Apex",
   description: "Guía práctica para estructurar integraciones REST en Salesforce Apex: autenticación, servicios, DTOs, errores, límites y pruebas de callouts.",
-  alternates: { canonical: "/blog/integraciones-rest-desde-apex" },
-};
+  path: "/blog/integraciones-rest-desde-apex",
+  type: "article",
+});
 
 const articleJsonLd = {
   "@context": "https://schema.org",
@@ -24,9 +25,9 @@ export default function ApexRestArticlePage() {
   return (
     <main className="case-page topic-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <InteriorHeader />
+      <SiteHeader active="articles" />
       <article className="article-page">
-        <nav className="breadcrumbs" aria-label="Migas de pan"><Link href="/">Inicio</Link><span>/</span><Link href="/blog">Artículos</Link><span>/</span><span>Apex REST</span></nav>
+        <Breadcrumbs items={[{ label: "Artículos", href: "/blog" }, { label: "Apex REST" }]} />
         <header className="article-hero">
           <p className="eyebrow"><span /> Apex · Integraciones REST</p>
           <h1>Cómo organizar integraciones REST desde Apex</h1>
@@ -73,7 +74,7 @@ export default function ApexRestArticlePage() {
 
         <div className="article-next"><Link href="/proyectos/google-drive-salesforce">Ver este patrón aplicado a Google Drive y Salesforce →</Link></div>
       </article>
-      <InteriorFooter />
+      <SiteFooter />
     </main>
   );
 }

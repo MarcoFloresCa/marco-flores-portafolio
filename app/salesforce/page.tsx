@@ -1,18 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import { InteriorFooter, InteriorHeader } from "../../components/SiteChrome";
+import { Breadcrumbs, SiteFooter, SiteHeader } from "../../components/SiteChrome";
+import { createPageMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Experiencia Salesforce · Apex, LWC, SOQL y Flow",
   description:
-    "Experiencia Salesforce de Marco Flores en Chile: Apex, Lightning Web Components, SOQL, Flow, Validation Rules, integraciones REST y administración de metadata.",
-  alternates: { canonical: "/salesforce" },
-  openGraph: {
-    title: "Experiencia Salesforce de Marco Flores",
-    description: "Desarrollo Salesforce en Chile con Apex, LWC, SOQL, Flow e integraciones REST API.",
-    url: "/salesforce",
-  },
-};
+    "Experiencia Salesforce de Marco Flores en Mostazal, Región de O'Higgins, Chile: Apex, LWC, SOQL, Flow, integraciones REST y metadata.",
+  path: "/salesforce",
+});
 
 const skills = [
   { title: "Apex y SOQL", text: "Lógica de negocio, servicios, Triggers, clases de prueba y consultas diseñadas dentro de los límites de la plataforma." },
@@ -26,7 +21,7 @@ const skills = [
 const questions = [
   {
     question: "¿Quién es Marco Flores?",
-    answer: "Marco Flores es un Salesforce Developer y Analista TI chileno, radicado en Mostazal, especializado en desarrollo, automatización e integración de soluciones Salesforce.",
+    answer: "Marco Flores es un Salesforce Developer y Analista TI chileno, radicado en Mostazal, Región de O'Higgins, especializado en desarrollo, automatización e integración de soluciones Salesforce.",
   },
   {
     question: "¿En qué tecnologías Salesforce trabaja Marco Flores?",
@@ -56,15 +51,15 @@ export default function SalesforcePage() {
   return (
     <main className="case-page topic-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      <InteriorHeader />
+      <SiteHeader active="salesforce" />
 
       <div className="topic-page-body">
-        <nav className="breadcrumbs" aria-label="Migas de pan"><Link href="/">Inicio</Link><span>/</span><span>Salesforce</span></nav>
+        <Breadcrumbs items={[{ label: "Salesforce" }]} />
         <header className="topic-hero">
           <p className="eyebrow"><span /> Especialidad principal</p>
           <h1>Experiencia Salesforce de Marco Flores</h1>
           <p>
-            Desarrollador Salesforce y Analista TI en Chile con experiencia profesional en Apex,
+            Desarrollador Salesforce y Analista TI en Mostazal, Región de O&apos;Higgins, Chile, con experiencia profesional en Apex,
             Lightning Web Components, SOQL, Salesforce Flow, Validation Rules, integraciones REST
             y administración de metadata.
           </p>
@@ -122,7 +117,7 @@ export default function SalesforcePage() {
         </aside>
       </div>
 
-      <InteriorFooter />
+      <SiteFooter />
     </main>
   );
 }

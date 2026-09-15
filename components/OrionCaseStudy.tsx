@@ -153,7 +153,7 @@ export function OrionCaseStudy() {
     <article className="case-study">
       <header className="case-hero">
         <p className="eyebrow"><span /> Case study · IA aplicada · Salesforce</p>
-        <h2>El asistente que audita lo que dice</h2>
+        <h1>El asistente que audita lo que dice</h1>
         <p className="case-hero-copy">
           Orion es un chatbot de consulta —solo lectura— que explica la lógica real de una
           organización Salesforce: objetos, campos, relaciones, Flows, Triggers y reglas de

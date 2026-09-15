@@ -1,21 +1,20 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import { InteriorFooter, InteriorHeader } from "../../components/SiteChrome";
+import { Breadcrumbs, SiteFooter, SiteHeader } from "../../components/SiteChrome";
+import { createPageMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Privacidad y términos · Marco Flores",
+export const metadata = createPageMetadata({
+  title: "Privacidad y términos",
   description:
     "Política de privacidad y términos del sitio marcoflores.cl, portafolio profesional de Marco Flores, Salesforce Developer en Chile.",
-  alternates: { canonical: "/privacy" },
-  robots: { index: true, follow: true },
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (
     <main className="case-page topic-page">
-      <InteriorHeader />
+      <SiteHeader />
       <article className="article-page">
-        <nav className="breadcrumbs" aria-label="Migas de pan"><Link href="/">Inicio</Link><span>/</span><span>Privacidad</span></nav>
+        <Breadcrumbs items={[{ label: "Privacidad" }]} />
         <header className="article-hero">
           <p className="eyebrow"><span /> Información del sitio</p>
           <h1>Privacidad y términos</h1>
@@ -40,7 +39,7 @@ export default function PrivacyPage() {
 
         <div className="article-next"><Link href="/">Volver al portafolio →</Link></div>
       </article>
-      <InteriorFooter />
+      <SiteFooter />
     </main>
   );
 }

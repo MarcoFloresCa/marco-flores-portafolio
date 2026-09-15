@@ -1,16 +1,14 @@
-import type { Metadata } from "next";
-import Link from "next/link";
 import { OrionCaseStudy } from "../../../components/OrionCaseStudy";
-import { InteriorFooter, InteriorHeader } from "../../../components/SiteChrome";
+import { Breadcrumbs, SiteFooter, SiteHeader } from "../../../components/SiteChrome";
+import { createPageMetadata } from "../../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Case study · Asistente para entender la lógica de Salesforce",
   description:
     "Orion: arquitectura de un chatbot de consulta (solo lectura) que explica objetos, campos, relaciones, Flows, Triggers y reglas de validación de una organización Salesforce.",
-  alternates: {
-    canonical: "/proyectos/orion",
-  },
-};
+  path: "/proyectos/orion",
+  type: "article",
+});
 
 const articleJsonLd = {
   "@context": "https://schema.org",
@@ -29,14 +27,14 @@ export default function OrionPage() {
   return (
     <main className="case-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <InteriorHeader />
+      <SiteHeader active="projects" />
 
       <section className="case-page-body">
-        <Link className="case-back" href="/#proyectos">← Volver a proyectos</Link>
+        <Breadcrumbs items={[{ label: "Proyectos", href: "/proyectos" }, { label: "Orion" }]} />
         <OrionCaseStudy />
       </section>
 
-      <InteriorFooter />
+      <SiteFooter />
     </main>
   );
 }
