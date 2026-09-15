@@ -18,6 +18,27 @@ const skills = [
   { title: "Entrega técnica", text: "Git, Salesforce CLI, sandboxes, despliegues controlados, documentación y revisión antes de producción." },
 ];
 
+const evidence = [
+  {
+    type: "Salesforce · IA aplicada",
+    title: "Orion: asistente basado en metadata de Salesforce",
+    text: "Caso técnico de un asistente de solo consulta con respuestas ancladas en evidencia y post-validación determinista.",
+    href: "/proyectos/orion",
+  },
+  {
+    type: "Salesforce · Integración",
+    title: "Google Drive conectado mediante JWT Bearer",
+    text: "Arquitectura server-to-server con Apex, OAuth 2.0, firma RS256 y trazabilidad documental.",
+    href: "/proyectos/google-drive-salesforce",
+  },
+  {
+    type: "Apex · Práctica técnica",
+    title: "Cómo organizar integraciones REST desde Apex",
+    text: "Guía sobre autenticación, transporte, DTOs, errores observables, límites y pruebas de callouts.",
+    href: "/blog/integraciones-rest-desde-apex",
+  },
+];
+
 const questions = [
   {
     question: "¿Quién es Marco Flores?",
@@ -94,6 +115,26 @@ export default function SalesforcePage() {
             decide qué corresponde resolver con configuración, Flow, LWC o Apex, evitando código
             innecesario y dejando trazabilidad para el equipo que mantendrá la plataforma.
           </p>
+        </section>
+
+        <section className="topic-section" aria-labelledby="salesforce-evidence">
+          <div className="topic-section-heading">
+            <p className="section-kicker">Evidencia pública</p>
+            <h2 id="salesforce-evidence">Experiencia respaldada por casos técnicos</h2>
+            <p>Proyectos y documentación que permiten revisar el enfoque, las decisiones y las tecnologías utilizadas.</p>
+          </div>
+          <div className="evidence-grid">
+            {evidence.map((item) => (
+              <Link href={item.href} key={item.href}>
+                <article>
+                  <p className="section-kicker">{item.type}</p>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                  <span>Revisar evidencia →</span>
+                </article>
+              </Link>
+            ))}
+          </div>
         </section>
 
         <section className="topic-section" aria-labelledby="salesforce-faq">

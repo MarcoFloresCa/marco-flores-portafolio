@@ -172,6 +172,10 @@ test("publishes extractable Salesforce answers and technical article schema", as
   assert.match(salesforceHtml, /"@type":"FAQPage"/i);
   assert.match(salesforceHtml, /¿Quién es Marco Flores\?/i);
   assert.match(salesforceHtml, /Lightning Web Components \(LWC\)/i);
+  assert.match(salesforceHtml, /Experiencia respaldada por casos técnicos/i);
+  assert.match(salesforceHtml, /href="\/proyectos\/orion"/i);
+  assert.match(salesforceHtml, /href="\/proyectos\/google-drive-salesforce"/i);
+  assert.match(salesforceHtml, /href="\/blog\/integraciones-rest-desde-apex"/i);
   assert.match(articleHtml, /"@type":"TechArticle"/i);
   assert.match(articleHtml, /HttpCalloutMock/i);
   assert.match(articleHtml, /Named Credentials/i);
